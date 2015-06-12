@@ -23,7 +23,7 @@
         <div class="main">
             <h2 class="header ui">All Clients</h2>
             <div class="ui input action">
-                <input type="text" placeholder="Search Users">
+                <input type="text" placeholder="Search Client">
                 <button class="ui icon button">
                     <i class="icon search"></i>
                 </button>
@@ -59,7 +59,7 @@
                                 <a href="">
                                     <div class="visible content">Deactivate</div>
                                     <div class="hidden content">
-                                        <i class="trash icon"></i>
+                                        <i class="lock icon"></i>
                                     </div>
                                 </a>
                             </div>
@@ -90,7 +90,7 @@
                                 <a href="">
                                     <div class="visible content">Deactivate</div>
                                     <div class="hidden content">
-                                        <i class="trash icon"></i>
+                                        <i class="lock icon"></i>
                                     </div>
                                 </a>
                             </div>
@@ -121,7 +121,7 @@
                                 <a href="">
                                     <div class="visible content">Deactivate</div>
                                     <div class="hidden content">
-                                        <i class="trash icon"></i>
+                                        <i class="lock icon"></i>
                                     </div>
                                 </a>
                             </div>
