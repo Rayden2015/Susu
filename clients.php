@@ -30,7 +30,7 @@
             </div>
             <div class="floated right">
                 <div class="ui button blue" id="add-user">
-                    <i class="entypo-user-add"></i> Add Client
+                    <i class="entypo-suitcase"></i> Add Client
                 </div>
             </div>
             <div class="ui divider"></div>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="content">
                             <h2 class="ui header">Laura Anderson</h2>
-                            <span class="meta">Marketer</span>
+                            <span class="meta">20145210</span>
                             <div class="description">
                                 <div><strong>Username: </strong> steve</div>
                                 <div><strong>Password: </strong> steve</div>
@@ -108,7 +108,7 @@
                         </div>
                         <div class="content">
                             <h2 class="ui header">Joe Tapoli</h2>
-                            <span class="meta">Accountant</span>
+                            <span class="meta">20145210</span>
                             <div class="description">
                                 <div><strong>Username: </strong> steve</div>
                                 <div><strong>Password: </strong> steve</div>
@@ -130,7 +130,7 @@
                 </div>
             </div>
             
-            <!-- Add New User Modal -->
+            <!-- Add New Client Modal -->
             <div class="ui modal small" id="add-user-modal">
                 <i class="close icon"></i>
                 <div class="header">
@@ -158,21 +158,13 @@
                             <label for="location">Location</label>
                             <input type="text" id="location">
                         </div>
-                        <div class="field">
-                            <label for="username">Username</label>
-                            <input type="text">
-                        </div>
-                        <div class="field">
-                            <label for="password">Password</label>
-                            <input type="password">
-                        </div>
                     </form>
                 </div>
                 <div class="actions">
                     <div class="ui black button">
                         Nope
                     </div>
-                    <div class="ui positive right labeled icon button">
+                    <div class="ui blue right labeled icon button">
                         Add
                     <i class="plus icon"></i>
                     </div>

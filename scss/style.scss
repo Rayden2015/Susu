@@ -39,7 +39,7 @@ div.sidebar {
                 color: $white-dark;
                 transition: all ease 0.3s;
                 font-size: 1.5rem;
-                padding: 10px;
+                // padding: 10px;
                 border-top: 1px solid #2C2C2C;
                 box-sizing: border-box;
                 font-size: 18px;
@@ -58,7 +58,11 @@ div.sidebar {
                         color: $white;
                     }
                 }
-
+                a {
+                    padding: 10px;
+                    display: inline-block;
+                    width: 100%;
+                }
                 i {
                     color: $orange;
                     margin-right: 10px;
@@ -79,7 +83,7 @@ div.sidebar {
     top: 0;
     height: 63px;
     width: 100%;
-    background: $white;
+    background-color: $white;
     box-shadow: $shadow-blur;
     padding: 8px 20px;
     z-index: 50;
