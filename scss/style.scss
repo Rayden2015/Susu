@@ -5,7 +5,10 @@ img {
 }
 a {
     text-decoration: none;
-    color: inherit !important;
+    color: inherit;
+}
+a.blue {
+    color: blue;
 }
 div.sidebar {
     width: 220px;

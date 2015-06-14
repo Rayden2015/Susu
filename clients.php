@@ -48,8 +48,8 @@
                             <h2 class="ui header">Steve Wood</h2>
                             <span class="meta">20145210</span>
                             <div class="description">
-                                <div><strong>Username: </strong> steve</div>
-                                <div><strong>Password: </strong> steve</div>
+                                <div><strong>Balance: </strong> GHc 8000</div>
+                                <div><strong>Email: </strong> steve@gmail.com</div>
                                 <div><strong>Location: </strong> Accra</div>
                                 <div><strong>Contact: </strong> 0277110176</div>
                             </div>
@@ -79,8 +79,8 @@
                             <h2 class="ui header">Laura Anderson</h2>
                             <span class="meta">20145210</span>
                             <div class="description">
-                                <div><strong>Username: </strong> steve</div>
-                                <div><strong>Password: </strong> steve</div>
+                                <div><strong>Balance: </strong> GHc 58</div>
+                                <div><strong>Email: </strong> laura@mail.com</div>
                                 <div><strong>Location: </strong> Accra</div>
                                 <div><strong>Contact: </strong> 0277110176</div>
                             </div>
@@ -110,8 +110,8 @@
                             <h2 class="ui header">Joe Tapoli</h2>
                             <span class="meta">20145210</span>
                             <div class="description">
-                                <div><strong>Username: </strong> steve</div>
-                                <div><strong>Password: </strong> steve</div>
+                                <div><strong>Balance: </strong> GHc 15</div>
+                                <div><strong>Email: </strong> tap@hotmail.com</div>
                                 <div><strong>Location: </strong> Accra</div>
                                 <div><strong>Contact: </strong> 0277110176</div>
                             </div>
