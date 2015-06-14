@@ -34,8 +34,11 @@
             </div>
             <div class="ui divider"></div>
 
-            <div class="ui large feed">
-                <div class="event">
+            
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="ui large feed">
+                        <div class="event">
                     <div class="label">
                         <img src="img/joe.jpg" alt="">
                     </div>
@@ -94,8 +97,28 @@
                         </div>
                     </div>
                 </div>
+                    </div>
+                </div>
 
+                <div class="column">
+                    <div class="ui card">
+                        <div class="image">
+                            <img src="img/steve.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <h2 class="ui header">Joe Tapoli</h2>
+                            <span class="meta">20152414</span>
+                            <div class="description">
+                                <div><strong>Balance: </strong> GHc 15</div>
+                                <div><strong>Email: </strong> tap@hotmail.com</div>
+                                <div><strong>Location: </strong> Accra</div>
+                                <div><strong>Contact: </strong> 0277110176</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         
