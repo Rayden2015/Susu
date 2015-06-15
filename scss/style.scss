@@ -3,9 +3,12 @@
 img {
     max-width: 100%;
 }
+.xdsoft_datetimepicker {
+    font-family: 'Century Gothic' !important;
+}
 a {
     text-decoration: none;
-    color: inherit;
+    color: inherit !important;
 }
 a.blue {
     color: blue;
@@ -124,7 +127,9 @@ div.sidebar {
     position: absolute;
     right: 50px;
     top: 40px;
-
+    &.trans {
+        top: 25px;
+    }
 }
 input[type='file'] {
     margin: 0em;
@@ -150,4 +155,9 @@ input[type='file'] {
     padding: 20px;
     box-sizing: border-box;
     box-shadow: $shadow;
+}
+.menu {
+    .item {
+        cursor: pointer;
+    }
 }

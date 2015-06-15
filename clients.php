@@ -22,11 +22,9 @@
         </div>
         <div class="main">
             <h2 class="header ui">All Clients</h2>
-            <div class="ui input action">
+            <div class="ui input icon">
                 <input type="text" placeholder="Search Client">
-                <button class="ui icon button">
-                    <i class="icon search"></i>
-                </button>
+                <i class="icon search"></i>
             </div>
             <div class="floated right">
                 <div class="ui button blue" id="add-user">
@@ -55,11 +53,11 @@
                             </div>
                         </div>
                         <div class="extra content">
-                            <div class="ui vertical animated button red">
+                            <div class="ui vertical animated button blue">
                                 <a href="">
-                                    <div class="visible content">Deactivate</div>
+                                    <div class="visible content">Activate</div>
                                     <div class="hidden content">
-                                        <i class="lock icon"></i>
+                                        <i class="entypo-key icon"></i>
                                     </div>
                                 </a>
                             </div>
@@ -90,7 +88,7 @@
                                 <a href="">
                                     <div class="visible content">Deactivate</div>
                                     <div class="hidden content">
-                                        <i class="lock icon"></i>
+                                        <i class="entypo-lock icon"></i>
                                     </div>
                                 </a>
                             </div>
@@ -121,7 +119,7 @@
                                 <a href="">
                                     <div class="visible content">Deactivate</div>
                                     <div class="hidden content">
-                                        <i class="lock icon"></i>
+                                        <i class="entypo-lock icon"></i>
                                     </div>
                                 </a>
                             </div>

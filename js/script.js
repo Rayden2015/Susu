@@ -5,5 +5,10 @@ $(document).ready(function() {
     });
 
     $('.selection.dropdown').dropdown();
+
+    $('#datepicker').datetimepicker({
+        timepicker: false,
+        format: 'd-m-Y'
+    });
     
 });
