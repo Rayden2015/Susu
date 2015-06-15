@@ -5,6 +5,7 @@
     <meta name="author" content="Nurudin Lartey, Emmanuel Asaber, Infinixel">
     <title>Transactions | Daily Susu</title>
     <link rel="stylesheet" href="css/semantic.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
     <link rel="stylesheet" href="css/entypo/css/entypo.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/fav.jpg">
@@ -21,104 +22,59 @@
         </div>
         <div class="main">
             <h2 class="ui header">All Transactions</h2>
-            <div class="ui input action">
-                <input type="text" placeholder="Search Client">
-                <button class="ui icon button">
-                    <i class="icon search"></i>
-                </button>
-            </div>
-            <div class="floated right">
+            
+            <div class="floated right trans">
                 <div class="ui button blue" id="add-user">
                     <i class="entypo-switch"></i> New Transaction
                 </div>
             </div>
             <div class="ui divider"></div>
-
             
-            <div class="ui two column grid">
-                <div class="column">
-                    <div class="ui large feed">
-                        <div class="event">
-                    <div class="label">
-                        <img src="img/joe.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="date">
-                            26th May 2015
-                        </div>
-                        <div class="summary">
-                            <a href="" class="user blue ui">
-                                Joe Tapoli
-                            </a> deposited <strong>GHc 500</strong>
-                        </div>
-                        <div class="extra text">
-                            <div class="meta">Balance: <strong>GHc 500</strong></div><br>
-                            <div class="meta">Issued By: <strong>Kelvin</strong></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <div class="label">
-                        <img src="img/steve.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="date">
-                            23th May 2015
-                        </div>
-                        <div class="summary">
-                            <a href="" class="user blue ui">
-                                Steve Wood
-                            </a> redrew <strong>GHc 5</strong>
-                        </div>
-                        <div class="extra text">
-                            <div class="meta">Balance: <strong>GHc 250</strong></div><br>
-                            <div class="meta">Issued By: <strong>Mercy</strong></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <div class="label">
-                        <img src="img/laura.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="date">
-                            12th May 2015
-                        </div>
-                        <div class="summary">
-                            <a href="" class="user blue ui">
-                                Laura Anderson
-                            </a> deposited <strong>GHc 50</strong>
-                        </div>
-                        <div class="extra text">
-                            <div class="meta">Balance: <strong>GHc 50</strong></div><br>
-                            <div class="meta">Issued By: <strong>Kelvin</strong></div>
-                        </div>
-                    </div>
-                </div>
-                    </div>
-                </div>
-
-                <div class="column">
-                    <div class="ui card">
-                        <div class="image">
-                            <img src="img/steve.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <h2 class="ui header">Joe Tapoli</h2>
-                            <span class="meta">20152414</span>
-                            <div class="description">
-                                <div><strong>Balance: </strong> GHc 15</div>
-                                <div><strong>Email: </strong> tap@hotmail.com</div>
-                                <div><strong>Location: </strong> Accra</div>
-                                <div><strong>Contact: </strong> 0277110176</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="ui text menu">
+                <div class="header item">Sort By:</div>
+                <div class="item active" data-target="all">All</div>
+                <div class="item" data-target="today">Today</div>
+                <div class="item" data-target="yesterday">Yesterday</div>
+            </div>
+            <div class="ui input icon" style="margin-left: 30px">
+                <input type="text" placeholder="Search Client Account">
+                <i class="icon search"></i>
             </div>
 
+
+
+            <div class="ui segment">
+                <table class="ui celled striped table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Client</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                            <th>User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Withdrawal</td>
+                            <td>26th May 2015</td>
+                            <td>Steve Wood</td>
+                            <td>GHc 500.00</td>
+                            <td>GHc 1500.00</td>
+                            <td>Adwoa Mercy</td>
+                        </tr>
+                        <tr>
+                            <td>Deposite</td>
+                            <td>12th May 2015</td>
+                            <td>Joe Tapoli</td>
+                            <td>GHc 50.00</td>
+                            <td>GHc 250.00</td>
+                            <td>Kwesi Mansa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         
@@ -138,17 +94,34 @@
                                 <i class="dropdown icon"></i>
                                 <div class="menu">
                                     <div class="item" data-value="Deposite">Deposite</div>
-                                    <div class="item" data-value="Redrawal">Redrawal</div>
+                                    <div class="item" data-value="Redrawal">Withdrawal</div>
                                 </div>
                             </div>
                         </div>
                         <div class="field">
-                            <label for="client_name">Client Name</label>
-                            <input type="text" id="full_name">
+                            <label for="type">Client's Name</label>
+                            <div class="ui selection dropdown">
+                                <input type="hidden">
+                                <div class="default text">Client's Name</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <div class="item" data-value="Steve Wood">Steve Wood</div>
+                                    <div class="item" data-value="Joe Tapoli">Joe Tapoli</div>
+                                    <div class="item" data-value="Laura Anderson">Laura Anderson</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="field">
                             <label for="amount">Amount</label>
                             <input type="text" id="amount">
+                        </div>
+                        <div class="field">
+                            <label for="con_pass">Confirm Password</label>
+                            <input type="password" id="con_pass">
+                        </div>
+                        <div class="field">
+                            <label for="date">Date</label>
+                            <input type="text" id="datepicker">
                         </div>
                     </form>
                 </div>
@@ -168,6 +141,7 @@
 
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/semantic.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
