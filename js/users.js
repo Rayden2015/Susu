@@ -1,9 +1,8 @@
 /**
  * Created by ME on 6/14/15.
  */
-$("document").ready(function(){
-    loadUsers();
-});
+loadUsers();
+
 $("#createUser").click(function(){
     data = new FormData();
     data.append("username", $("#username").val());
@@ -24,6 +23,7 @@ $("#createUser").click(function(){
     function completeHandler(event){
         $(".overlay").hide();
         alert(event.target.responseText);
+        loadUsers();
      }
 
     function errorHandler(event){

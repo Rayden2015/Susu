@@ -27,9 +27,6 @@
             <button class="ui icon button">
                 <i class="icon search"></i>
             </button>
-            <div class="ui input icon">
-                <input type="text" placeholder="Search Users">
-                <i class="icon search"></i>
             </div>
             <div class="floated right">
                 <div class="ui button blue" id="add-user">
