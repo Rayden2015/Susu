@@ -65,7 +65,7 @@
                             <td>GHc 1500.00</td>
                             <td>Adwoa Mercy</td>
                             <td>
-                                <div class="ui icon button blue" title="Edit">
+                                <div class="fluid ui icon button blue" title="Edit">
                                     <i class="write icon"></i> Edit
                                 </div>
                             </td>
@@ -78,7 +78,7 @@
                             <td>GHc 250.00</td>
                             <td>Kwesi Mansa</td>
                             <td>
-                                <div class="ui icon button blue" title="Edit">
+                                <div class="fluid ui icon button blue" title="Edit">
                                     <i class="write icon"></i> Edit
                                 </div>
                             </td>
