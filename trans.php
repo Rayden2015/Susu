@@ -53,6 +53,7 @@
                             <th>Amount</th>
                             <th>Balance</th>
                             <th>User</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,6 +64,11 @@
                             <td>GHc 500.00</td>
                             <td>GHc 1500.00</td>
                             <td>Adwoa Mercy</td>
+                            <td>
+                                <div class="ui icon button blue" title="Edit">
+                                    <i class="write icon"></i> Edit
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Deposite</td>
@@ -71,6 +77,11 @@
                             <td>GHc 50.00</td>
                             <td>GHc 250.00</td>
                             <td>Kwesi Mansa</td>
+                            <td>
+                                <div class="ui icon button blue" title="Edit">
+                                    <i class="write icon"></i> Edit
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
