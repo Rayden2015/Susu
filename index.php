@@ -1,5 +1,8 @@
+<?php
+    require_once("php/action.php");
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Nurudin Lartey, Emmanuel Asaber, Infinixel">
@@ -13,18 +16,24 @@
     
     <div class="login">
         <h2 class="header">Login</h2>
-        <form action="" class="ui form">
+<!--       <form class="ui form" action="index.php" method="post">-->
+        <form class="ui form" id="login">
             <div class="field">
                 <label for="">Username</label>
-                <input type="text">
+                <input type="text" name="username">
             </div>
             <div class="field">
                 <label for="">Password</label>
-                <input type="password">
+                <input type="password" name="password">
             </div>
-            <button type="submit" class="ui button blue">Login</button>
+
+            <button class="ui button blue" >Login</button>
         </form>
+
     </div>
+
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>
