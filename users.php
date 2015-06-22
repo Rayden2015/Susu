@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Nurudin Lartey, Emmanuel Asaber, Infinixel">
+    <meta name="author" content="Nurudin Lartey, Infinixel, Microfinance">
     <title>Users | Daily Susu</title>
     <link rel="stylesheet" href="css/semantic.css">
     <link rel="stylesheet" href="css/entypo/css/entypo.css">
@@ -11,9 +11,20 @@
 </head>
 <body>
 
-
 <!-- Sidebar -->
-<?php include('includes/sidebar.php'); ?>
+<div class="sidebar">
+    <div class="brand">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="users.php"><i class="entypo-users"></i> Users</a></li>
+            <li><a href="logout.php"><i class="entypo-logout"></i> Sign Out</a></li>
+        </ul>
+    </nav>
+</div>
 <!-- End of Sidebar -->
 
 <section class="wrapper">
@@ -36,98 +47,7 @@
             <div class="ui divider"></div>
 
             <div class="ui three column grid" id="gridBox">
-                <div class="column">
-                    <div class="ui card fluid">
-                        <div class="image">
-                            <img src="img/steve.jpg" alt="">
-                            <div class="circular flt ui icon button blue" title="Edit">
-                                <i class="write icon"></i>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h2 class="ui header">Steve Wood</h2>
-                            <span class="meta">C.E.O</span>
-                            <div class="description">
-                                <div><strong>Username: </strong> steve</div>
-                                <div><strong>Password: </strong> steve</div>
-                                <div><strong>Location: </strong> Accra</div>
-                                <div><strong>Contact: </strong> 0277110176</div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="ui vertical animated button red">
-                                <a href="">
-                                    <div class="visible content">Deactivate</div>
-                                    <div class="hidden content">
-                                        <i class="lock icon"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui card fluid">
-                        <div class="image">
-                            <img src="img/laura.jpg" alt="">
-                            <div class="circular flt ui icon button blue" title="Edit">
-                                <i class="write icon"></i>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h2 class="ui header">Laura Anderson</h2>
-                            <span class="meta">Marketer</span>
-                            <div class="description">
-                                <div><strong>Username: </strong> steve</div>
-                                <div><strong>Password: </strong> steve</div>
-                                <div><strong>Location: </strong> Accra</div>
-                                <div><strong>Contact: </strong> 0277110176</div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="ui vertical animated button red">
-                                <a href="">
-                                    <div class="visible content">Deactivate</div>
-                                    <div class="hidden content">
-                                        <i class="lock icon"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column">
-                    <div class="ui card fluid">
-                        <div class="image">
-                            <img src="img/joe.jpg" alt="">
-                            <div class="circular flt ui icon button blue" title="Edit">
-                                <i class="write icon"></i>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h2 class="ui header">Joe Tapoli</h2>
-                            <span class="meta">Accountant</span>
-                            <div class="description">
-                                <div><strong>Username: </strong> steve</div>
-                                <div><strong>Password: </strong> steve</div>
-                                <div><strong>Location: </strong> Accra</div>
-                                <div><strong>Contact: </strong> 0277110176</div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="ui vertical animated button blue">
-                                <a href="">
-                                    <div class="visible content">Activate</div>
-                                    <div class="hidden content">
-                                        <i class="entypo-key icon"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+             </div>
 
             <!-- Add New User Modal -->
             <div class="ui modal small" id="add-user-modal">

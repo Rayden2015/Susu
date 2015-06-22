@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    
+    <i class="fa fa-cog" id="overlay"></i>
     <!-- Sidebar -->
     <?php include('includes/sidebar.php'); ?>
     <!-- End of Sidebar -->
@@ -23,7 +23,7 @@
         <div class="main">
             <h2 class="header ui">All Clients</h2>
             <div class="ui input icon">
-                <input type="text" placeholder="Search Client">
+                <input type="text" placeholder="Search Client" name="q">
                 <i class="icon search"></i>
             </div>
             <div class="floated right">
@@ -33,99 +33,7 @@
             </div>
             <div class="ui divider"></div>
             
-            <div class="ui three column grid">
-                <div class="column">
-                    <div class="ui card fluid">
-                        <div class="image">
-                            <img src="img/steve.jpg" alt="">
-                            <div class="circular flt ui icon button blue" title="Edit">
-                                <i class="write icon"></i>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h2 class="ui header">Steve Wood</h2>
-                            <span class="meta">20145210</span>
-                            <div class="description">
-                                <div><strong>Balance: </strong> GHc 8000</div>
-                                <div><strong>Email: </strong> steve@gmail.com</div>
-                                <div><strong>Location: </strong> Accra</div>
-                                <div><strong>Contact: </strong> 0277110176</div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="ui vertical animated button blue">
-                                <a href="">
-                                    <div class="visible content">Activate</div>
-                                    <div class="hidden content">
-                                        <i class="entypo-key icon"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column">
-                    <div class="ui card fluid">
-                        <div class="image">
-                            <img src="img/laura.jpg" alt="">
-                            <div class="circular flt ui icon button blue" title="Edit">
-                                <i class="write icon"></i>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h2 class="ui header">Laura Anderson</h2>
-                            <span class="meta">20145210</span>
-                            <div class="description">
-                                <div><strong>Balance: </strong> GHc 58</div>
-                                <div><strong>Email: </strong> laura@mail.com</div>
-                                <div><strong>Location: </strong> Accra</div>
-                                <div><strong>Contact: </strong> 0277110176</div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="ui vertical animated button red">
-                                <a href="">
-                                    <div class="visible content">Deactivate</div>
-                                    <div class="hidden content">
-                                        <i class="entypo-lock icon"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column">
-                    <div class="ui card fluid">
-                        <div class="image">
-                            <img src="img/joe.jpg" alt="">
-                            <div class="circular flt ui icon button blue" title="Edit">
-                                <i class="write icon"></i>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h2 class="ui header">Joe Tapoli</h2>
-                            <span class="meta">20145210</span>
-                            <div class="description">
-                                <div><strong>Balance: </strong> GHc 15</div>
-                                <div><strong>Email: </strong> tap@hotmail.com</div>
-                                <div><strong>Location: </strong> Accra</div>
-                                <div><strong>Contact: </strong> 0277110176</div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="ui vertical animated button red">
-                                <a href="">
-                                    <div class="visible content">Deactivate</div>
-                                    <div class="hidden content">
-                                        <i class="entypo-lock icon"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="ui three column grid" id="gridBox">
             </div>
             
             <!-- Add New Client Modal -->
@@ -162,7 +70,7 @@
                     <div class="ui black button">
                         Nope
                     </div>
-                    <div class="ui blue right labeled icon button">
+                    <div class="ui blue right labeled icon button" id="createClient">
                         Add
                     <i class="plus icon"></i>
                     </div>
@@ -175,5 +83,9 @@
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/semantic.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/clients.js"></script>
+    <script>
+        loadClients();
+    </script>
 </body>
 </html>

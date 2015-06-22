@@ -191,3 +191,25 @@ input[type='file'] {
 .menu .item {
   cursor: pointer;
 }
+
+html, body{
+    min-height: 100%;
+}
+body{
+
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    background-image: url("../img/loader2.gif");
+    background-position: center center;
+    background-size: 174px;
+    background-repeat: no-repeat;
+    display: none;
+}

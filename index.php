@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="css/semantic.css">
     <link rel="stylesheet" href="css/entypo/css/entypo.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/fav.jpg">
+    <link rel="icon"       href="img/fav.jpg">
 </head>
 <body>
     
     <div class="login">
         <h2 class="header">Login</h2>
-<!--       <form class="ui form" action="index.php" method="post">-->
-        <form class="ui form" id="login">
+        <form class="ui form" id="login" method="post" action="index.php" >
             <div class="field">
                 <label for="">Username</label>
                 <input type="text" name="username">
@@ -27,7 +26,7 @@
                 <input type="password" name="password">
             </div>
 
-            <button class="ui button blue" >Login</button>
+            <button class="ui button blue" name="login">Login</button>
         </form>
 
     </div>
