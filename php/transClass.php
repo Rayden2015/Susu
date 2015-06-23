@@ -39,9 +39,9 @@ class trans{
     public function loadTrans(){
         global $database;
         $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
-FROM transactions, users, clients
-WHERE transactions.user = users.id
-AND transactions.client = clients.id ORDER BY id DESC";
+            FROM transactions, users, clients
+            WHERE transactions.user = users.id
+            AND transactions.client = clients.id ORDER BY id DESC";
         $result = $database->exec_query($query);
         return $result;
     }
@@ -55,6 +55,7 @@ AND transactions.client = clients.id ORDER BY id DESC limit 1";
         $result = $database->exec_query($query);
         return $result;
     }
+
     public function activate($id, $status){
         global $database;
         $query = "";
@@ -75,22 +76,27 @@ AND transactions.client = clients.id ORDER BY id DESC limit 1";
 
     }
 
-    public function login($username,$password ){
+    public function loadTransWithin($start, $end){
         global $database;
-        $query  = "Select * from users where username ='$username' and password = '$password' limit 1";
-        $result = $database->exec_query($query);
-        $num    = mysqli_num_rows($result);
-        if($num > 0){
-            while($rows = $database->fetchArray($result)){
-                setcookie('userId',$rows[0]);
-                setcookie('username', $rows[5]);
-                echo "success";
-            }
-        }else{
-            echo "Username or Password Incorrect";
-        }
-    }
+        $query = "";
+        if($end = ''){
 
+            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
+            FROM transactions, users, clients
+            WHERE (transactions.user = users.id
+            AND transactions.client = clients.id
+            AND `date` ='$start' ORDER by id DESC";
+        }else{
+            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
+            FROM transactions, users, clients
+            WHERE (transactions.user = users.id
+            AND transactions.client = clients.id
+            AND `date` BETWEEN $start' AND '$end' ) ORDER by id DESC";
+        }
+
+        $result = $database->exec_query($query);
+        return $result;
+    }
 
 
 }

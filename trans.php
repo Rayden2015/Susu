@@ -21,13 +21,16 @@
             <h2 class="ui header">Transactions</h2>
         </div>
         <div class="main">
-            <h2 class="ui header">All Transactions</h2>
+            <h2 class="ui header">Deposits : GHC250</h2>
+            <h2 class="ui header">Withdrawals : GHC250</h2>
+            <h2 class="ui header">Balance : GHC250</h2>
             
             <div class="floated right trans">
                 <div class="ui button blue" id="add-user">
                     <i class="entypo-switch"></i> New Transaction
                 </div>
             </div>
+
             <div class="ui divider"></div>
             
 <!--            <div class="ui text menu">-->
@@ -36,22 +39,32 @@
 <!--                <div class="item" data-target="today">Today</div>-->
 <!--                <div class="item" data-target="yesterday">Yesterday</div>-->
 <!--            </div>-->
-            <div class="ui input icon" style="margin-left: 30px">
-                <input type="text" placeholder="Search by Date" name="d">
-                <i class="icon search"></i>
+
+            <div class="ui input icon" style="margin-left: 0px">
+                <input type="text" class="datepicker" placeholder="Start Date">
             </div>
-            <div class="ui input icon" style="margin-left: 30px">
+            <div class="ui input icon" style="margin-left: 0px">
+                <input type="text" class="datepicker" placeholder="End Date">
+            </div>
+            <div class="ui blue button">
+                Load
+            </div>
+<!--            <div class="ui input icon" style="margin-left: 0px">-->
+<!--                <input type="text" placeholder="Search by Date" name="d">-->
+<!--                <i class="icon search"></i>-->
+<!--            </div>-->
+            <div class="ui input icon" style="margin-left: 0px">
                 <input type="text" placeholder="Search by Client" name="c">
                 <i class="icon search"></i>
             </div>
-            <select class="ui selection dropdown" id="type">
+
+            <select class="ui selection dropdown" name="t" id="transtype">
                 <div class="menu">
+                    <option class="item">All</option>
                     <option class="item">Deposit</option>
                     <option class="item">Withdrawal</option>
                 </div>
             </select>
-
-
 
             <div class="ui segment">
                 <table class="ui celled striped table">
@@ -59,11 +72,11 @@
                         <tr>
                             <th>Date</th>
                             <th>Client</th>
-<<<<<<< HEAD
                             <th>Type</th>
                             <th>Amount (GH₵)</th>
                             <th>Balance (GH₵)</th>
                             <th>Cashier</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody id="gridBox">
@@ -75,46 +88,10 @@
                                 <td>five</td>
                                 <td>six</td>
                             </tr>
-=======
-                            <th>Amount</th>
-                            <th>Balance</th>
-                            <th>User</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Withdrawal</td>
-                            <td>26th May 2015</td>
-                            <td>Steve Wood</td>
-                            <td>GHc 500.00</td>
-                            <td>GHc 1500.00</td>
-                            <td>Adwoa Mercy</td>
-                            <td>
-                                <div class="fluid ui icon button blue" title="Edit">
-                                    <i class="write icon"></i> Edit
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Deposite</td>
-                            <td>12th May 2015</td>
-                            <td>Joe Tapoli</td>
-                            <td>GHc 50.00</td>
-                            <td>GHc 250.00</td>
-                            <td>Kwesi Mansa</td>
-                            <td>
-                                <div class="fluid ui icon button blue" title="Edit">
-                                    <i class="write icon"></i> Edit
-                                </div>
-                            </td>
-                        </tr>
->>>>>>> 64782e614e83ecad22609ba729103b1a08db8e1c
                     </tbody>
                 </table>
             </div>
         </div>
-
         
         <!-- Add New Transaction Modal -->
             <div class="ui modal small" id="add-user-modal">
@@ -145,7 +122,7 @@
 <!--                        </div>-->
                         <div class="field">
                             <label for="date">Date</label>
-                            <input type="text" id="datepicker">
+                            <input type="text" class="datepicker">
                         </div>
                     </form>
                 </div>
@@ -161,6 +138,11 @@
             </div>
             <!-- End of modal -->
 
+        <style>
+            #transtype{
+                width:20px !important;
+            }
+        </style>
     </section>
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/semantic.js"></script>

@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     $('.selection.dropdown').dropdown();
 
-    $('#datepicker').datetimepicker({
+    $('.datepicker').datetimepicker({
         timepicker: false,
         format: 'd-M-Y h:i a'
     });

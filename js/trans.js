@@ -94,7 +94,7 @@ function search(q, against) {
         });
         search.results[q] = $('.FOUND_LINKS_MATCH');
         if (search.results[q].length === 0) {
-            $('#gridBox tr').fadeOut();
+            $('#gridBox tr').hide();
             $('.void-content-message').show();
         } else {
             search.results[q].show();
@@ -106,8 +106,20 @@ function search(q, against) {
 $('[name=d]').keyup(function () {
     search($(this).val(),'td:nth-child(1)');
 });
+
 $('[name=c]').keyup(function () {
     search($(this).val(),'td:nth-child(2)');
+});
+
+$('[name=t]').change(function (){
+    if($(this).val() == 'All'){
+        $('#gridBox tr ').each(function () {
+            $(this).show();
+        });
+    }else{
+        $('#gridBox tr').hide();
+        search($(this).val(),'td:nth-child(3)');
+    }
 });
 
 
@@ -120,12 +132,31 @@ $(".activate").click(function(e){
 
 function sum(){
     var add = 0;
-
     $("#gridBox td:nth-child(5)").each(function(){
         var operand = $(this).html();
         operand  = parseInt(operand);
             add = add + operand;
     });
     alert(add);
+}
+
+function loadTransWithin(start, end){
+    $(".overlay").show();
+    var ajax = new XMLHttpRequest();
+    ajax.addEventListener("load",completeHandler, false);
+    ajax.addEventListener("error", errorHandler, false);
+    ajax.open("POST", "php/action.php?loadTrans=''");
+    ajax.send("");
+
+    function completeHandler(event){
+        $(".overlay").hide();
+        //alert(event.target.responseText);
+        $("#gridBox").html(event.target.responseText);
+    }
+
+    function errorHandler(event){
+        $(".overlay").hide();
+        alert("Error : "+event.target.responseText);
+    }
 }
 
