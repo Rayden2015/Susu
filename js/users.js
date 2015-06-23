@@ -3,6 +3,10 @@
  */
 loadUsers();
 
+$(document).on('click', '.editBtn', function() {
+    $('#add-user-modal').modal('show');
+});
+
 $("#createUser").click(function(){
     data = new FormData();
     data.append("username", $("#username").val());

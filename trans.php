@@ -51,15 +51,12 @@
                 </div>
             </select>
 
-
-
             <div class="ui segment">
                 <table class="ui celled striped table">
                     <thead>
                         <tr>
                             <th>Date</th>
                             <th>Client</th>
-<<<<<<< HEAD
                             <th>Type</th>
                             <th>Amount (GH₵)</th>
                             <th>Balance (GH₵)</th>
@@ -75,7 +72,6 @@
                                 <td>five</td>
                                 <td>six</td>
                             </tr>
-=======
                             <th>Amount</th>
                             <th>Balance</th>
                             <th>User</th>
@@ -109,7 +105,6 @@
                                 </div>
                             </td>
                         </tr>
->>>>>>> 64782e614e83ecad22609ba729103b1a08db8e1c
                     </tbody>
                 </table>
             </div>

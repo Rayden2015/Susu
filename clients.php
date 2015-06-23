@@ -81,6 +81,7 @@
     </section>
     
     <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
     <script src="js/semantic.js"></script>
     <script src="js/script.js"></script>
     <script src="js/clients.js"></script>
