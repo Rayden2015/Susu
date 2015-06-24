@@ -1,6 +1,7 @@
 /**
  * Created by ME on 6/14/15.
  */
+
 loadTrans();
 
 $("#createTrans").click(function(){
@@ -9,7 +10,7 @@ $("#createTrans").click(function(){
     data.append("client", $("#client option:selected").val());
     data.append("amount", $("#amount").val());
     //data.append("password", $("#con_pass").val());
-    data.append("date", $("#datepicker").val());
+    data.append("date", $(".datepicker_time").val());
     data.append("type", $("#type option:selected").val());
 
     var ajax = new XMLHttpRequest();
@@ -45,6 +46,8 @@ function loadTrans(){
         $(".overlay").hide();
         //alert(event.target.responseText);
         $("#gridBox").html(event.target.responseText);
+        sum();
+        $("#time").html(': Today')
     }
 
     function errorHandler(event){
@@ -67,6 +70,7 @@ function loadOneTrans(){
         $(".overlay").hide();
         //alert(event.target.responseText);
         $("#gridBox").prepend(event.target.responseText);
+        sum();
     }
 
     function errorHandler(event){
@@ -131,27 +135,57 @@ $(".activate").click(function(e){
 });
 
 function sum(){
-    var add = 0;
-    $("#gridBox td:nth-child(5)").each(function(){
-        var operand = $(this).html();
-        operand  = parseInt(operand);
-            add = add + operand;
+    var deposits    = 0;
+    var withdrawals = 0;
+    var balance     = 0;
+
+    $("#gridBox tr ").each(function(){
+        if($(this).find("td:nth-child(3)").html() == 'Withdrawal' ){
+            var operand = $(this).find("td:nth-child(4)").html();
+            operand = parseInt(operand);
+            withdrawals = withdrawals + operand;
+        }else{
+            var operand = $(this).find("td:nth-child(4)").html();
+            operand = parseInt(operand);
+            deposits = deposits + operand;
+        }
+
     });
-    alert(add);
+
+    balance = deposits - withdrawals;
+    //alert("Withdrawals : "+withdrawals);
+    //alert("Deposits : "+deposits);
+    //alert("Balance : "+balance);
+    $("#depo").html(deposits);
+    $("#with").html(withdrawals);
+    $("#bal").html(balance);
+
 }
+
+$("#loadData").click(loadTransWithin);
 
 function loadTransWithin(start, end){
     $(".overlay").show();
+    data = new FormData();
+    data.append("start", $("#start").val());
+    data.append("end", $("#end").val());
+
     var ajax = new XMLHttpRequest();
     ajax.addEventListener("load",completeHandler, false);
     ajax.addEventListener("error", errorHandler, false);
-    ajax.open("POST", "php/action.php?loadTrans=''");
-    ajax.send("");
+    ajax.open("POST", "php/action.php?loadTransWithin=''");
+    ajax.send(data);
 
     function completeHandler(event){
         $(".overlay").hide();
         //alert(event.target.responseText);
         $("#gridBox").html(event.target.responseText);
+        sum();
+       if($("#end").val() == ''){
+           $("#time").html(' : '+$("#start").val());
+       }else{
+           $("#time").html('From '+$("#start").val()+' To '+$("#end").val());
+       }
     }
 
     function errorHandler(event){

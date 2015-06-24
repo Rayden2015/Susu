@@ -38,10 +38,13 @@ class trans{
 
     public function loadTrans(){
         global $database;
+        $date = date('d-M-Y');
         $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
             FROM transactions, users, clients
             WHERE transactions.user = users.id
-            AND transactions.client = clients.id ORDER BY id DESC";
+            AND transactions.client = clients.id
+            AND transactions.date LIKE '$date%'
+            ORDER BY id DESC";
         $result = $database->exec_query($query);
         return $result;
     }
@@ -79,19 +82,18 @@ AND transactions.client = clients.id ORDER BY id DESC limit 1";
     public function loadTransWithin($start, $end){
         global $database;
         $query = "";
-        if($end = ''){
-
+        if($end == ''){
             $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
             FROM transactions, users, clients
-            WHERE (transactions.user = users.id
+            WHERE transactions.user = users.id
             AND transactions.client = clients.id
-            AND `date` ='$start' ORDER by id DESC";
+            AND `date` like '$start%' ORDER by id DESC";
         }else{
             $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
             FROM transactions, users, clients
-            WHERE (transactions.user = users.id
+            WHERE transactions.user = users.id
             AND transactions.client = clients.id
-            AND `date` BETWEEN $start' AND '$end' ) ORDER by id DESC";
+            AND `date` >= '$start' AND `date` <= '$end'  ORDER by id DESC";
         }
 
         $result = $database->exec_query($query);

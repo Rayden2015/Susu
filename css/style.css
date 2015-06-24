@@ -213,3 +213,8 @@ body{
     background-repeat: no-repeat;
     display: none;
 }
+
+
+#with, #depo, #bal{
+    color:#3B83C0;
+}

@@ -146,11 +146,6 @@
                     <td>'.$rows[4].'</td>
                     <td>'.$rows[5].'</td>
                     <td>'.$rows[6].'</td>
-                    <td>
-                        <div class="fluid ui icon button blue" title="Edit">
-                            <i class="write icon"></i> Edit
-                        </div>
-                    </td>
                 </tr>
             ';
         }
@@ -167,16 +162,25 @@
                     <td>'.$rows[4].'</td>
                     <td>'.$rows[5].'</td>
                     <td>'.$rows[6].'</td>
-                    <td>
-                        <div class="fluid ui icon button blue" title="Edit">
-                            <i class="write icon"></i> Edit
-                        </div>
-                    </td>
                 </tr>
                 ';
         }
     }
 
-
+if(isset($_GET['loadTransWithin'])){
+    $result = $trans->loadTransWithin($_POST['start'], $_POST['end']);
+    while($rows = $database->fetchArray($result)){
+        echo '
+                <tr data-id="'.$rows[0].'" data-type="'.$rows[1].'" data-date="'.$rows[2].'" data-client="'.$rows[3].'" data-amount="'.$rows[4].'" >
+                    <td>'.$rows[2].'</td>
+                    <td>'.$rows[3].'</td>
+                    <td>'.$rows[1].'</td>
+                    <td>'.$rows[4].'</td>
+                    <td>'.$rows[5].'</td>
+                    <td>'.$rows[6].'</td>
+                </tr>
+            ';
+    }
+}
 
 ?>

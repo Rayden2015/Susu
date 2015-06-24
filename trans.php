@@ -1,3 +1,7 @@
+<?php
+echo date('d-M-Y');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +22,12 @@
 
     <section class="wrapper">
         <div class="toolbar">
-            <h2 class="ui header">Transactions</h2>
+            <h2 class="ui header">Transactions <span id="time"></span></h2>
         </div>
         <div class="main">
-            <h2 class="ui header">Deposits : GHC250</h2>
-            <h2 class="ui header">Withdrawals : GHC250</h2>
-            <h2 class="ui header">Balance : GHC250</h2>
+            <h2 class="ui header">Deposits : GH₵<span id="depo" ></span></h2>
+            <h2 class="ui header">Withdrawals : GH₵<span id="with" ></span></h2>
+            <h2 class="ui header">Balance : GH₵<span id="bal"></span></h2>
             
             <div class="floated right trans">
                 <div class="ui button blue" id="add-user">
@@ -32,27 +36,16 @@
             </div>
 
             <div class="ui divider"></div>
-            
-<!--            <div class="ui text menu">-->
-<!--                <div class="header item">Sort By:</div>-->
-<!--                <div class="item" data-target="all">All</div>-->
-<!--                <div class="item" data-target="today">Today</div>-->
-<!--                <div class="item" data-target="yesterday">Yesterday</div>-->
-<!--            </div>-->
 
             <div class="ui input icon" style="margin-left: 0px">
-                <input type="text" class="datepicker" placeholder="Start Date">
+                <input type="text" class="datepicker" placeholder="Start Date" id="start">
             </div>
             <div class="ui input icon" style="margin-left: 0px">
-                <input type="text" class="datepicker" placeholder="End Date">
+                <input type="text" class="datepicker" placeholder="End Date" id="end">
             </div>
-            <div class="ui blue button">
+            <div class="ui blue button" id="loadData">
                 Load
             </div>
-<!--            <div class="ui input icon" style="margin-left: 0px">-->
-<!--                <input type="text" placeholder="Search by Date" name="d">-->
-<!--                <i class="icon search"></i>-->
-<!--            </div>-->
             <div class="ui input icon" style="margin-left: 0px">
                 <input type="text" placeholder="Search by Client" name="c">
                 <i class="icon search"></i>
@@ -76,25 +69,9 @@
                             <th>Amount (GH₵)</th>
                             <th>Balance (GH₵)</th>
                             <th>Cashier</th>
-                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody id="gridBox">
-                            <tr>
-                                <td>one</td>
-                                <td>two</td>
-                                <td>three</td>
-                                <td>four</td>
-                                <td>five</td>
-                                <td>six</td>
-                            </tr>
-                            <th>Amount</th>
-                            <th>Balance</th>
-                            <th>User</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
                         <tr>
                             <td>Withdrawal</td>
                             <td>26th May 2015</td>
@@ -155,7 +132,7 @@
 <!--                        </div>-->
                         <div class="field">
                             <label for="date">Date</label>
-                            <input type="text" class="datepicker">
+                            <input type="text" class="datepicker_time">
                         </div>
                     </form>
                 </div>
