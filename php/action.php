@@ -29,7 +29,7 @@
                     <div class="ui card fluid">
                         <div class="image">
                             <img src="img/steve.jpg" alt="">
-                            <div class="circular flt ui icon button blue" title="Edit">
+                            <div class="editBtn circular flt ui icon button blue" title="Edit">
                                 <i class="write icon"></i>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                     <div class="ui card fluid">
                         <div class="image">
                             
-                            <div class="circular flt ui icon button blue" title="Edit">
+                            <div class="editBtn circular flt ui icon button blue" title="Edit">
                                 <i class="write icon"></i>
                             </div>
                         </div>

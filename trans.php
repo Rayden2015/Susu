@@ -88,6 +88,39 @@
                                 <td>five</td>
                                 <td>six</td>
                             </tr>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                            <th>User</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Withdrawal</td>
+                            <td>26th May 2015</td>
+                            <td>Steve Wood</td>
+                            <td>GHc 500.00</td>
+                            <td>GHc 1500.00</td>
+                            <td>Adwoa Mercy</td>
+                            <td>
+                                <div class="fluid ui icon button blue" title="Edit">
+                                    <i class="write icon"></i> Edit
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Deposite</td>
+                            <td>12th May 2015</td>
+                            <td>Joe Tapoli</td>
+                            <td>GHc 50.00</td>
+                            <td>GHc 250.00</td>
+                            <td>Kwesi Mansa</td>
+                            <td>
+                                <div class="fluid ui icon button blue" title="Edit">
+                                    <i class="write icon"></i> Edit
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -137,12 +170,6 @@
                 </div>
             </div>
             <!-- End of modal -->
-
-        <style>
-            #transtype{
-                width:20px !important;
-            }
-        </style>
     </section>
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/semantic.js"></script>

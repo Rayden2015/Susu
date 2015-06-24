@@ -1,6 +1,11 @@
 /**
  * Created by ME on 6/14/15.
  */
+
+$(document).on('click', '.editBtn', function() {
+    $('#add-user-modal').modal('show');
+});
+
 $("#createClient").click(function(){
     data = new FormData();
     data.append("name", $("#full_name").val());
