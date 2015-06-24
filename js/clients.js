@@ -2,11 +2,27 @@
  * Created by ME on 6/14/15.
  */
 
-$(document).on('click', '.editBtn', function() {
-    $('#add-user-modal').modal('show');
+var editBtn = $('.editBtn');
+$(document).on('click', editBtn, function(event) {
+    var $target = event.target,
+        data = $target.closest('.clientGrid'),
+        dataId = data.dataset['id'],
+        dataName = data.dataset['name'],
+        dataContact = data.dataset['contact'],
+        dataClient = data.dataset['client'],
+        dataEmail = data.dataset['email'],
+        dataLocation = data.dataset['location'],
+        dataStatus = data.dataset['status'];
+        $("#full_name").val(dataName);
+        $("#email").val(dataEmail);
+        $("#contact").val(dataContact);
+        $("#location").val(dataLocation);
+        $("#id").val(dataId);
+        $('#add-user-modal').modal('show');
+        // console.log(data);
 });
 
-$("#createClient").click(function(){
+$("#createClient").click(function() {
     data = new FormData();
     data.append("name", $("#full_name").val());
     data.append("email", $("#email").val());
@@ -21,36 +37,36 @@ $("#createClient").click(function(){
     ajax.send(data);
 
 
-    function completeHandler(event){
+    function completeHandler(event) {
         $(".overlay").hide();
         alert(event.target.responseText);
         loadClients();
-     }
+    }
 
-    function errorHandler(event){
+    function errorHandler(event) {
         $(".overlay").hide();
-        alert("Error : "+event.target.responseText);
+        alert("Error : " + event.target.responseText);
     }
 
 });
 
-function loadClients(){
+function loadClients() {
     var ajax = new XMLHttpRequest();
-    ajax.addEventListener("load",completeHandler, false);
+    ajax.addEventListener("load", completeHandler, false);
     ajax.addEventListener("error", errorHandler, false);
     ajax.open("POST", "php/action.php?loadClients=''");
     ajax.send("");
 
-    function completeHandler(event){
+    function completeHandler(event) {
         $(".overlay").hide();
         //alert(event.target.responseText);
         alert("Loading");
         $("#gridBox").html(event.target.responseText);
     }
 
-    function errorHandler(event){
+    function errorHandler(event) {
         $(".overlay").hide();
-        alert("Error : "+event.target.responseText);
+        alert("Error : " + event.target.responseText);
     }
 }
 
@@ -60,7 +76,7 @@ function search(q) {
         search.results[q].show()
     } else {
         $('.userGrid').hide();
-        $('.userGrid').each(function () {
+        $('.userGrid').each(function() {
             var product = $(this).find("h2"),
                 Regex = new RegExp(q, 'i');
 
@@ -82,7 +98,7 @@ function search(q) {
     }
 }
 
-$('[name=q]').keyup(function () {
+$('[name=q]').keyup(function() {
     search($(this).val());
 });
 
@@ -92,7 +108,7 @@ function search(q) {
         search.results[q].show()
     } else {
         $('.clientGrid').hide();
-        $('.clientGrid').each(function () {
+        $('.clientGrid').each(function() {
             var product = $(this).find("h2"),
                 Regex = new RegExp(q, 'i');
 
@@ -116,6 +132,6 @@ function search(q) {
 
 
 
-$('[name=q]').keyup(function () {
+$('[name=q]').keyup(function() {
     search($(this).val());
 });

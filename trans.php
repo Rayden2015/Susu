@@ -1,7 +1,3 @@
-<?php
-echo date('d-M-Y');
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +8,8 @@ echo date('d-M-Y');
     <link rel="stylesheet" href="css/jquery.datetimepicker.css">
     <link rel="stylesheet" href="css/entypo/css/entypo.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon"       href="img/fav.jpg">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="icon" href="img/fav.jpg">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 </head>
 <body>
     <!-- Sidebar -->
@@ -111,6 +107,7 @@ echo date('d-M-Y');
                 </div>
                 <div class="content">
                     <form action="" class="ui form">
+                        <input type="hidden" id="id" name="id" />
                         <div class="field">
                             <label for="type">Transaction Type</label>
                             <select class="ui selection dropdown" id="type">
@@ -122,6 +119,7 @@ echo date('d-M-Y');
                         </div>
 
                        <?php require_once("php/clientsList.php");?>
+
                         <div class="field">
                             <label for="amount">Amount</label>
                             <input type="text" id="amount">
@@ -133,6 +131,7 @@ echo date('d-M-Y');
                         <div class="field">
                             <label for="date">Date</label>
                             <input type="text" class="datepicker_time">
+                            <input type="text" class="datepicker" id="date">
                         </div>
                     </form>
                 </div>
