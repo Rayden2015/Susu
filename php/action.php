@@ -25,7 +25,7 @@
             }
 
             echo '
-                    <div class="column userGrid" id="">
+                    <div class="column userGrid" data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-username="'.$rows[5].'" data-password="'.$rows[6].'" data-position="'.$rows[7].'" data-status="'.$rows[8].'">
                     <div class="ui card fluid">
                         <div class="image">
                             <img src="img/steve.jpg" alt="">
@@ -97,7 +97,7 @@
                 $color = "red";
             }
             echo '
-                <div class="column clientGrid">
+                <div class="column clientGrid" data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[8].'" >
                     <div class="ui card fluid">
                         <div class="image">
                             
@@ -139,7 +139,7 @@
         $result = $trans->loadTrans();
         while($rows = $database->fetchArray($result)){
             echo '
-                <tr>
+                <tr data-id="'.$rows[0].'" data-type="'.$rows[1].'" data-date="'.$rows[2].'" data-client="'.$rows[3].'" data-amount="'.$rows[4].'" >
                     <td>'.$rows[2].'</td>
                     <td>'.$rows[3].'</td>
                     <td>'.$rows[1].'</td>
@@ -160,7 +160,7 @@
         $result = $trans->loadOneTrans();
         while($rows = $database->fetchArray($result)){
             echo '
-                 <tr>
+                 <tr data-id="'.$rows[0].'" data-type="'.$rows[1].'" data-date="'.$rows[2].'" data-client="'.$rows[3].'" data-amount="'.$rows[4].'">
                     <td>'.$rows[2].'</td>
                     <td class="name">'.$rows[3].'</td>
                     <td>'.$rows[1].'</td>
