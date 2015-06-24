@@ -3,8 +3,30 @@
  */
 loadUsers();
 
-$(document).on('click', '.editBtn', function() {
-    $('#add-user-modal').modal('show');
+var editBtn = $('.editBtn');
+$(document).on('click', editBtn, function(event) {
+    var $target = event.target,
+        data = $target.closest('.userGrid'),
+        dataId = data.dataset['id'],
+        dataName = data.dataset['name'],
+        dataContact = data.dataset['contact'],
+        dataClient = data.dataset['client'],
+        dataEmail = data.dataset['email'],
+        dataLocation = data.dataset['location'],
+        dataUsername = data.dataset['username'],
+        dataPassword = data.dataset['password'],
+        dataPosition = data.dataset['postion'],
+        dataStatus = data.dataset['username'];
+        $("#full_name").val(dataName);
+        $("#email").val(dataEmail);
+        $("#contact").val(dataContact);
+        $("#location").val(dataLocation);
+        $("#username").val(dataUsername);
+        $("#password").val(dataPassword);
+        $("#position").val(dataPosition);
+        $("#id").val(dataId);
+        $('#add-user-modal').modal('show');
+        // console.log(data);
 });
 
 $("#createUser").click(function(){

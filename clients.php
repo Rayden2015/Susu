@@ -44,6 +44,7 @@
                 </div>
                 <div class="content">
                     <form action="" class="ui form">
+                        <input type="hidden" id="id" name="id">
                         <div class="field">
                             <label for="picture">Picture</label>
                             <input type="file" id="picture">

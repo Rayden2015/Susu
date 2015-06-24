@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/jquery.datetimepicker.css">
     <link rel="stylesheet" href="css/entypo/css/entypo.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon"       href="img/fav.jpg">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="icon" href="img/fav.jpg">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 </head>
 <body>
     <!-- Sidebar -->
@@ -134,6 +134,7 @@
                 </div>
                 <div class="content">
                     <form action="" class="ui form">
+                        <input type="hidden" id="id" name="id" />
                         <div class="field">
                             <label for="type">Transaction Type</label>
                             <select class="ui selection dropdown" id="type">
@@ -145,6 +146,7 @@
                         </div>
 
                        <?php require_once("php/clientsList.php");?>
+
                         <div class="field">
                             <label for="amount">Amount</label>
                             <input type="text" id="amount">
@@ -155,7 +157,7 @@
 <!--                        </div>-->
                         <div class="field">
                             <label for="date">Date</label>
-                            <input type="text" class="datepicker">
+                            <input type="text" class="datepicker" id="date">
                         </div>
                     </form>
                 </div>

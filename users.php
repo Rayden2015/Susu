@@ -57,9 +57,10 @@
                 </div>
                 <div class="content">
                     <form action="" class="ui form">
+                        <input type="hidden" id="id" name="id">
                         <div class="field">
                             <label for="full_name">Full Name</label>
-                            <input type="text" id="name">
+                            <input type="text" id="full_name">
                         </div>
                         <div class="field">
                             <label for="position">Position</label>
