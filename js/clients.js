@@ -116,9 +116,9 @@ function search(q) {
 
 var actButton = $('#activateClient');
 $(document).on('click', actButton, function(event) {
-    $('#add-user-modal').modal('hide');
-    $(".overlay").show();
-    alert("hala0");
+    //$('#add-user-modal').modal('hide');
+    //$(".overlay").show();
+
     var $target     = event.target;
     var values        = $target.closest('#activateClient');
 
@@ -131,16 +131,14 @@ $(document).on('click', actButton, function(event) {
     ajax.addEventListener("error", errorHandler, false);
     ajax.open("POST", "php/action.php?activateClient=''");
     ajax.send(data);
-    alert("hala1");
+
     function completeHandler(event){
-        alert("hala2");
         $(".overlay").hide();
         alert(event.target.responseText);
         loadUsers();
     }
 
     function errorHandler(event){
-        alert("hala3");
         $(".overlay").hide();
         alert("Error : "+event.target.responseText);
     }

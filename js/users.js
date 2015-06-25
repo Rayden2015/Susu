@@ -120,8 +120,8 @@ $('[name=q]').keyup(function () {
 
 var actButton = $('#activate');
 $(document).on('click', actButton, function(event) {
-    $('#add-user-modal').modal('hide');
-   $(".overlay").show();
+    //$('#add-user-modal').modal('hide');
+   //$(".overlay").show();
 
     var $target     = event.target;
     var values        = $target.closest('#activate');

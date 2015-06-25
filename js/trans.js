@@ -4,22 +4,6 @@
 
 loadTrans();
 
-var editTrans = $('.editTrans');
-$(document).on('click', editTrans, function(event) {
-    var $target = event.target,
-        data = $target.closest('tr'),
-        dataId = data.dataset['id'],
-        dataType = data.dataset['type'],
-        dataDate = data.dataset['date'],
-        dataClient = data.dataset['client'],
-        dataAmount = data.dataset['amount'];
-        $("#date").val(dataDate);
-        $("#amount").val(dataAmount);
-        $("#id").val(dataId);
-        $('#add-user-modal').modal('show');
-        // console.log(dataAmount);
-});
-
 $('.datepicker').datetimepicker({
     timepicker: false,
     format: 'd-M-Y h:i a'
