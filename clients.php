@@ -40,15 +40,15 @@
             <div class="ui modal small" id="add-user-modal">
                 <i class="close icon"></i>
                 <div class="header">
-                    Add New Client
+                    Update Client
                 </div>
                 <div class="content">
                     <form action="" class="ui form">
                         <input type="hidden" id="id" name="id">
-                        <div class="field">
-                            <label for="picture">Picture</label>
-                            <input type="file" id="picture">
-                        </div>
+<!--                        <div class="field">-->
+<!--                            <label for="picture">Picture</label>-->
+<!--                            <input type="file" id="picture">-->
+<!--                        </div>-->
                         <div class="field">
                             <label for="full_name">Full Name</label>
                             <input type="text" id="full_name">
@@ -65,6 +65,7 @@
                             <label for="location">Location</label>
                             <input type="text" id="location">
                         </div>
+
                     </form>
                 </div>
                 <div class="actions">

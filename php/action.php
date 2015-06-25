@@ -8,7 +8,10 @@
 
     if(isset($_GET['createUser'])){
         echo $users->createUser($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_POST['username'], $_POST['password'], $_POST['position']);
+    }
 
+    if(isset($_GET['editUser'])){
+        echo $users->editUser($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_POST['username'], $_POST['password'], $_POST['position'],$_POST['id']);
     }
 
     if(isset($_GET['loadUsers'])){
@@ -43,13 +46,13 @@
                             </div>
                         </div>
                         <div class="extra content">
-                            <div class="ui vertical animated button activate '.$color.'" id="activate">
-                                <a href="php/action.php?id='.$rows[0].'&status='.$rows[8].'">
+                            <div class="ui vertical animated button '.$color.'" id="activate" data-id="'.$rows[0].'" data-status="'.$rows[8].'">
+
                                     <div class="visible content">'.$status.'</div>
                                     <div class="hidden content">
                                         <i class="trash icon"></i>
                                     </div>
-                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -74,12 +77,20 @@
         header('Location : logout.php');
     }
 
-    if(isset($_GET['id']) && isset($_GET['status'])){
-       echo $users->activate($_GET['id'], $_GET['status']);
+    if(isset($_GET['activateUser'])){
+       echo $users->activate($_POST['id'], $_POST['status']);
+    }
+
+    if(isset($_GET['activateClient'])){
+        echo $clients->activate($_POST['id'], $_POST['status']);
     }
 
     if(isset($_GET['createClient'])){
         echo $clients->createClient($_POST['name'],$_POST['contact'], $_POST['email'], $_POST['location'],'');
+    }
+
+    if(isset($_GET['editClient'])){
+        echo $clients->editClient($_POST['name'],$_POST['contact'], $_POST['email'], $_POST['location'],'', $_POST['id']);
     }
 
     if(isset($_GET['loadClients'])){
@@ -116,13 +127,13 @@
                             </div>
                         </div>
                         <div class="extra content">
-                            <div class="ui vertical animated button '.$color.'">
-                                <a href="">
+                            <div class="ui vertical animated button '.$color.'" data-id="'.$rows[0].'" data-status="'.$rows[8].'" id="activateClient">
+
                                     <div class="visible content">'.$status.'</div>
                                     <div class="hidden content">
                                         <i class="entypo-lock icon"></i>
                                     </div>
-                                </a>
+
                             </div>
                         </div>
                     </div>

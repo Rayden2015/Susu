@@ -1,6 +1,3 @@
-/**
- * Created by ME on 6/14/15.
- */
 loadUsers();
 
 var editBtn = $('.editBtn');
@@ -30,21 +27,27 @@ $(document).on('click', editBtn, function(event) {
 });
 
 $("#createUser").click(function(){
+    var url = "";
+    if($("#id").val() == ''){
+        url = "php/action.php?createUser=''";
+    }else{
+        url = "php/action.php?editUser=''";
+    }
     data = new FormData();
+    data.append("id", $("#id").val());
     data.append("username", $("#username").val());
     data.append("password", $("#password").val());
-    data.append("name", $("#name").val());
+    data.append("name", $("#full_name").val());
     data.append("email", $("#email").val());
     data.append("contact", $("#contact").val());
     data.append("location", $("#location").val());
-    data.append("position", $("#postion").val());
+    data.append("position", $("#position option:selected").val());
 
     var ajax = new XMLHttpRequest();
     ajax.addEventListener("load", completeHandler, false);
     ajax.addEventListener("error", errorHandler, false);
-    ajax.open("POST", "php/action.php?createUser=''");
+    ajax.open("POST", url);
     ajax.send(data);
-
 
     function completeHandler(event){
         $(".overlay").hide();
@@ -56,10 +59,10 @@ $("#createUser").click(function(){
         $(".overlay").hide();
         alert("Error : "+event.target.responseText);
     }
-
 });
 
 function loadUsers(){
+    $(".overlay").show();
     var ajax = new XMLHttpRequest();
     ajax.addEventListener("load",completeHandler, false);
     ajax.addEventListener("error", errorHandler, false);
@@ -69,7 +72,6 @@ function loadUsers(){
     function completeHandler(event){
         $(".overlay").hide();
         //alert(event.target.responseText);
-        alert("Loading");
         $("#gridBox").html(event.target.responseText);
         $(".activate").bind("click");
     }
@@ -78,8 +80,6 @@ function loadUsers(){
         $(".overlay").hide();
         alert("Error : "+event.target.responseText);
     }
-
-
 }
 
 function search(q) {
@@ -114,9 +114,34 @@ $('[name=q]').keyup(function () {
     search($(this).val());
 });
 
-//activating and deactivating users
 
-$(".activate").click(function(e){
-    e.preventDefault();
-    alert("Activate was clicked");
+var actButton = $('#activate');
+$(document).on('click', actButton, function(event) {
+    $('#add-user-modal').modal('hide');
+   $(".overlay").show();
+
+    var $target     = event.target;
+    var values        = $target.closest('#activate');
+
+    data = new FormData();
+    data.append("id", values.dataset['id']);
+    data.append("status", values.dataset['status']);
+
+    var ajax = new XMLHttpRequest();
+    ajax.addEventListener("load",completeHandler, false);
+    ajax.addEventListener("error", errorHandler, false);
+    ajax.open("POST", "php/action.php?activateUser=''");
+    ajax.send(data);
+
+    function completeHandler(event){
+        $(".overlay").hide();
+        alert(event.target.responseText);
+        loadUsers();
+    }
+
+    function errorHandler(event){
+        $(".overlay").hide();
+        alert("Error : "+event.target.responseText);
+    }
 });
+

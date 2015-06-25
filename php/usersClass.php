@@ -14,6 +14,17 @@ class users{
         }
     }
 
+    public function editUser($name, $contact, $email, $location, $username, $password, $position, $id){
+        global $database;
+        $query = "UPDATE `users` SET `name`='$name',`contact`='$contact',`email`='$email',`location`='$location',`username`='$username',`password`='$password',`position`='$position' WHERE `id`=".$id;
+        $result = $database->exec_query($query);
+        if ($result ==1){
+            return "User Updated Successfully";
+        }else{
+            return "User Update Failed";
+        }
+    }
+
     public function loadUsers(){
         global $database;
         $query = "Select * from users";

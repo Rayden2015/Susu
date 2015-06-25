@@ -25,6 +25,9 @@
         </ul>
     </nav>
 </div>
+<div class="overlay">
+</div>
+
 <!-- End of Sidebar -->
 
 <section class="wrapper">
@@ -64,16 +67,12 @@
                         </div>
                         <div class="field">
                             <label for="position">Position</label>
-                            <div class="ui selection dropdown">
-                                <input type="hidden" id="position">
-                                <div class="default text">Position</div>
-                                <i class="dropdown icon"></i>
+                            <select class="ui selection dropdown" id="position">
                                 <div class="menu">
-                                    <div class="item" data-value="ceo">C.E.O</div>
-                                    <div class="item" data-value="cashier">Cashier</div>
-                                    <div class="item" data-value="accountant">Accountant</div>
+                                    <option class="item">Accountant</option>
+                                    <option class="item">Cashier</option>
                                 </div>
-                            </div>
+                            </select>
                         </div>
                         <div class="field">
                             <label for="username">Username</label>

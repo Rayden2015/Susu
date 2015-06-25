@@ -14,6 +14,17 @@ class clients{
         }
     }
 
+    public function editClient($name, $contact, $email, $location, $picture,$id){
+        global $database;
+        $query = "UPDATE `clients` SET `name`='$name',`contact`='$contact',`email`='$email',`location`='$location' WHERE `id`=".$id;
+        $result = $database->exec_query($query);
+        if ($result ==1){
+            return "Client Updated Successfully";
+        }else{
+            return "Client Update Failed";
+        }
+    }
+
     public function loadClients(){
         global $database;
         $query = "Select * from clients order by id desc";

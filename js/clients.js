@@ -23,17 +23,26 @@ $(document).on('click', editBtn, function(event) {
 });
 
 $("#createClient").click(function() {
+    var url ="";
+    if($("#id").val()== ''){
+        url = "php/action.php?createClient=''";
+    }else{
+        url = "php/action.php?editClient=''";
+    }
+    $(".overlay").show();
     data = new FormData();
     data.append("name", $("#full_name").val());
     data.append("email", $("#email").val());
     data.append("contact", $("#contact").val());
     data.append("location", $("#location").val());
+    data.append("position", $("#position option:selected").val());
+    data.append("id", $("#id").val());
 
 
     var ajax = new XMLHttpRequest();
     ajax.addEventListener("load", completeHandler, false);
     ajax.addEventListener("error", errorHandler, false);
-    ajax.open("POST", "php/action.php?createClient=''");
+    ajax.open("POST", url);
     ajax.send(data);
 
 
@@ -51,6 +60,7 @@ $("#createClient").click(function() {
 });
 
 function loadClients() {
+    $(".overlay").show();
     var ajax = new XMLHttpRequest();
     ajax.addEventListener("load", completeHandler, false);
     ajax.addEventListener("error", errorHandler, false);
@@ -60,41 +70,12 @@ function loadClients() {
     function completeHandler(event) {
         $(".overlay").hide();
         //alert(event.target.responseText);
-        alert("Loading");
         $("#gridBox").html(event.target.responseText);
     }
 
     function errorHandler(event) {
         $(".overlay").hide();
         alert("Error : " + event.target.responseText);
-    }
-}
-
-function search(q) {
-    if (!search.results) search.results = {};
-    if (search.results[q] != null) {
-        search.results[q].show()
-    } else {
-        $('.userGrid').hide();
-        $('.userGrid').each(function() {
-            var product = $(this).find("h2"),
-                Regex = new RegExp(q, 'i');
-
-            if (product.html().match(Regex)) {
-                //var link_id = link.parent('li').attr('data-link-id');
-                product.parents('.userGrid').addClass('FOUND_LINKS_MATCH');
-            } else {
-                product.parents('.userGrid').removeClass('FOUND_LINKS_MATCH');
-            }
-        });
-        search.results[q] = $('.FOUND_LINKS_MATCH');
-        if (search.results[q].length === 0) {
-            $('.userGrid').fadeOut();
-            $('.void-content-message').show();
-        } else {
-            search.results[q].show();
-            $('.void-content-message').hide();
-        }
     }
 }
 
@@ -131,7 +112,36 @@ function search(q) {
 }
 
 
+var actButton = $('#activateClient');
+$(document).on('click', actButton, function(event) {
+    $('#add-user-modal').modal('hide');
+    $(".overlay").show();
+    alert("hala0");
+    var $target     = event.target;
+    var values        = $target.closest('#activateClient');
 
-$('[name=q]').keyup(function() {
-    search($(this).val());
+    data = new FormData();
+    data.append("id", values.dataset['id']);
+    data.append("status", values.dataset['status']);
+
+    var ajax = new XMLHttpRequest();
+    ajax.addEventListener("load",completeHandler, false);
+    ajax.addEventListener("error", errorHandler, false);
+    ajax.open("POST", "php/action.php?activateClient=''");
+    ajax.send(data);
+    alert("hala1");
+    function completeHandler(event){
+        alert("hala2");
+        $(".overlay").hide();
+        alert(event.target.responseText);
+        loadUsers();
+    }
+
+    function errorHandler(event){
+        alert("hala3");
+        $(".overlay").hide();
+        alert("Error : "+event.target.responseText);
+    }
 });
+
+
