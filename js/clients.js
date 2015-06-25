@@ -4,22 +4,24 @@
 
 var editBtn = $('.editBtn');
 $(document).on('click', editBtn, function(event) {
-    var $target = event.target,
-        data = $target.closest('.clientGrid'),
-        dataId = data.dataset['id'],
-        dataName = data.dataset['name'],
-        dataContact = data.dataset['contact'],
-        dataClient = data.dataset['client'],
-        dataEmail = data.dataset['email'],
-        dataLocation = data.dataset['location'],
-        dataStatus = data.dataset['status'];
-        $("#full_name").val(dataName);
-        $("#email").val(dataEmail);
-        $("#contact").val(dataContact);
-        $("#location").val(dataLocation);
-        $("#id").val(dataId);
-        $('#add-user-modal').modal('show');
-        // console.log(data);
+    var $target = event.target;
+    if($target.className == 'editBtn circular flt ui icon button blue' || $target.className == 'write icon') {
+        var data = $target.closest('.clientGrid'),
+            dataId = data.dataset['id'],
+            dataName = data.dataset['name'],
+            dataContact = data.dataset['contact'],
+            dataClient = data.dataset['client'],
+            dataEmail = data.dataset['email'],
+            dataLocation = data.dataset['location'],
+            dataStatus = data.dataset['status'];
+            $("#full_name").val(dataName);
+            $("#email").val(dataEmail);
+            $("#contact").val(dataContact);
+            $("#location").val(dataLocation);
+            $("#id").val(dataId);
+            $('#add-user-modal').modal('show');
+            // console.log(data);
+    }
 });
 
 $("#createClient").click(function() {
