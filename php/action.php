@@ -22,9 +22,11 @@
             if($rows[8] == 0){
                 $status = "Activate";
                 $color  =  "blue";
+                $icon = "check";
             }else {
                 $status = "Deactivate";
                 $color  = "red";
+                $icon = "privacy";
             }
 
             echo '
@@ -50,7 +52,7 @@
 
                                     <div class="visible content">'.$status.'</div>
                                     <div class="hidden content">
-                                        <i class="trash icon"></i>
+                                        <i class="'.$icon.' icon"></i>
                                     </div>
 
                             </div>
@@ -103,9 +105,11 @@
             if($rows[8] == 0){
                 $status = "Activate";
                 $color = "blue";
+                $icon = "check"
             }else{
                 $status = "Deactivate";
                 $color = "red";
+                $icon = "privacy"
             }
             echo '
                 <div class="column clientGrid" data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[8].'" >
@@ -131,7 +135,7 @@
 
                                     <div class="visible content">'.$status.'</div>
                                     <div class="hidden content">
-                                        <i class="entypo-lock icon"></i>
+                                        <i class="'.$icon.' icon"></i>
                                     </div>
 
                             </div>
