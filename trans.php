@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/jquery.datetimepicker.css">
     <link rel="stylesheet" href="css/entypo/css/entypo.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/fav.jpg">
+    <link rel="icon" href="img/ccss_logo.png">
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 </head>
 <body>
@@ -130,7 +130,7 @@
 <!--                        </div>-->
                         <div class="field">
                             <label for="date">Date</label>
-                            <input type="text" class="datepicker_time">
+                            <!-- <input type="text" class="datepicker_time"> -->
                             <input type="text" class="datepicker" id="date">
                         </div>
                     </form>

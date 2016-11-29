@@ -105,11 +105,11 @@
             if($rows[8] == 0){
                 $status = "Activate";
                 $color = "blue";
-                $icon = "check"
+                $icon = "check";
             }else{
                 $status = "Deactivate";
                 $color = "red";
-                $icon = "privacy"
+                $icon = "privacy";
             }
             echo '
                 <div class="column clientGrid" data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[8].'" >

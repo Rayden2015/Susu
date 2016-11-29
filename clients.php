@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="author" content="Nurudin Lartey, Emmanuel Asaber, Infinixel">
     <title>Clients | Daily Susu</title>
+    <link rel="stylesheet" href="css/datatables.min.css">
     <link rel="stylesheet" href="css/semantic.css">
     <link rel="stylesheet" href="css/entypo/css/entypo.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/fav.jpg">
+    <link rel="icon" href="img/ccss_logo.png">
 </head>
 <body>
     
@@ -32,6 +33,7 @@
                 </div>
             </div>
             <div class="ui divider"></div>
+            <br><br>
             
             <div class="ui three column grid" id="gridBox">
             </div>
@@ -40,7 +42,7 @@
             <div class="ui modal small" id="add-user-modal">
                 <i class="close icon"></i>
                 <div class="header">
-                    Update Client
+                    New Client
                 </div>
                 <div class="content">
                     <form action="" class="ui form">
@@ -84,6 +86,7 @@
     
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.datetimepicker.js"></script>
+    <script src="js/datatables.min.js"></script>
     <script src="js/semantic.js"></script>
     <script src="js/script.js"></script>
     <script src="js/clients.js"></script>
