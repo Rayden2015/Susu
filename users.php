@@ -40,18 +40,31 @@
                         <label for="position">Position</label>
                         <select class="ui selection dropdown" id="position">
                             <div class="menu">
-                                <option class="item">Accountant</option>
-                                <option class="item">Cashier</option>
+                                <option class="item">Manager</option>
+                                <option class="item">Diretor</option>
                             </div>
                         </select>
                     </div>
-                    <div class="field">
-                        <label for="username">Username</label>
-                        <input type="text" id="username">
+                    <div class="ui two fields">
+                        <div class="field">
+                            <label for="username">Username</label>
+                            <input type="text" id="username">
+                        </div>
+                        <div class="field">
+                            <label for="password">Password</label>
+                            <input type="password" id="password">
+                        </div>
                     </div>
-                    <div class="field">
-                        <label for="password">Password</label>
-                        <input type="password" id="password">
+                    
+                    <div class="ui two fields">
+                        <div class="field">
+                            <label for="location">Location</label>
+                            <input type="text" id="location">
+                        </div>
+                        <div class="field">
+                            <label for="contact">Contact</label>
+                            <input type="text" id="contact">
+                        </div>
                     </div>
                     <div class="field">
                         <label for="location">Location</label>

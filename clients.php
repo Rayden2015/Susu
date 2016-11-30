@@ -43,15 +43,30 @@
                             <label for="picture">Picture</label>
                             <input type="file" name="picture" id="picture">
                         </div>
+                        
+                        <div class="ui two fields">
                         <div class="field">
                             <label for="full_name">Full Name</label>
                             <input type="text" id="full_name">
                         </div>
                         <div class="field">
-                            <label for="dob">Date of Birth</label>
-                            <input type="text" class="datepicker" id="dob">
+                            <label for="unit">Unit Contribution</label>
+                            <input type="text" id="unit">
                         </div>
+                    </div>
+
                         <div class="ui two fields">
+                            <div class="field">
+                                <label for="dob">Date of Birth</label>
+                                <input type="text" class="datepicker" id="dob">
+                            </div>
+                            <div class="field">
+                                <label for="kin">Next of Kin</label>
+                                <input type="text" id="kin">
+                            </div>
+                        </div>
+                        
+                        <div class="ui three fields">
                             <div class="field">
                                 <label for="contact">Phone Number</label>
                                 <input type="text" id="contact">
@@ -60,12 +75,30 @@
                                 <label for="location">Location</label>
                                 <input type="text" id="location">
                             </div>
+                            <div class="field">
+                                <label for="h_number">House Number</label>
+                                <input type="text" id="h_number">
+                            </div>
                         </div>
                         
-                        <div class="field">
-                            <label for="occupation">Occupation</label>
-                            <input type="text" id="occupation">
+                        <div class="ui two fields">
+                            <div class="field">
+                                <label for="occupation">Occupation</label>
+                                <input type="text" id="occupation">
+                            </div>
+
+                            <div class="field">
+                                <label for="sales">Sales Person</label>
+                                <select class="ui selection dropdown" id="gender">
+                                    <div class="menu">
+                                        <option class="item">Sales 1</option>
+                                        <option class="item">Sales 2</option>
+                                        <option class="item">Sales 3</option>
+                                    </div>
+                                </select>
+                            </div>
                         </div>
+                        
 
                     </form>
                 </div>

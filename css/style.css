@@ -215,3 +215,6 @@ body{
 #with, #depo, #bal{
     color:#3B83C0;
 }
+.ui.form .field > .selection.dropdown {
+  padding: 9px 14px;
+}

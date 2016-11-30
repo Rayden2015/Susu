@@ -33,27 +33,44 @@
                 <div class="content">
                     <form action="" class="ui form">
                         <input type="hidden" id="id" name="id">
-<!--                        <div class="field">-->
-<!--                            <label for="picture">Picture</label>-->
-<!--                            <input type="file" id="picture">-->
-<!--                        </div>-->
+                        <div class="field">
+                            <label for="picture">Picture</label>
+                            <input type="file" id="picture">
+                        </div>
                         <div class="field">
                             <label for="full_name">Full Name</label>
                             <input type="text" id="full_name">
                         </div>
-                        <div class="field">
-                            <label for="email">Email</label>
-                            <input type="email" id="email">
+                        <div class="ui two fields">
+                            <div class="field">
+                                <label for="contact">Phone Number</label>
+                                <input type="text" id="contact">
+                            </div>
+                            <div class="field">
+                                <label for="h_number">House Number</label>
+                                <input type="text" id="h_number">
+                            </div>
                         </div>
-                        <div class="field">
-                            <label for="contact">Phone Number</label>
-                            <input type="text" id="contact">
+                        <div class="ui two fields">
+                            <div class="field">
+                                <label for="location">Location</label>
+                                <input type="text" id="location">
+                            </div>
+                            <div class="field">
+                                <label for="gender">Gender</label>
+                                <select class="ui selection dropdown" id="gender">
+                                    <div class="menu">
+                                        <option class="item">Male</option>
+                                        <option class="item">Female</option>
+                                        <option class="item">Transgender</option>
+                                    </div>
+                                </select>
+                            </div>
                         </div>
-                        <div class="field">
-                            <label for="location">Location</label>
-                            <input type="text" id="location">
-                        </div>
+                        
 
+
+                    
                     </form>
                 </div>
                 <div class="actions">
