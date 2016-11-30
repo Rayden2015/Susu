@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Nurudin Lartey, Emmanuel Asaber, Infinixel">
-    <title>Transactions | Daily Susu</title>
-    <link rel="stylesheet" href="css/semantic.css">
-    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
-    <link rel="stylesheet" href="css/entypo/css/entypo.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/ccss_logo.png">
-    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
-</head>
-<body>
-    <!-- Sidebar -->
-    <?php include('includes/sidebar.php'); ?>
-    <!-- End of Sidebar -->
+    <?php
+        $page_title = "Transactions";
+        require_once('includes/sidebar.php');
+     ?>
 
     <section class="wrapper">
         <div class="toolbar">

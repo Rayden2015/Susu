@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Nurudin Lartey, Emmanuel Asaber, Infinixel">
-    <title>Sales Persons | Daily Susu</title>
-    <link rel="stylesheet" href="css/semantic.css">
-    <link rel="stylesheet" href="css/entypo/css/entypo.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/fav.jpg">
-</head>
-<body>
-    
-    <i class="fa fa-cog" id="overlay"></i>
-    <!-- Sidebar -->
-    <?php include('includes/sidebar.php'); ?>
-    <!-- End of Sidebar -->
+<?php
+        $page_title = "Sales Persons";
+        require_once('includes/sidebar.php');
+     ?>
 
     <section class="wrapper">
         <div class="toolbar">
@@ -41,7 +28,7 @@
             <div class="ui modal small" id="add-user-modal">
                 <i class="close icon"></i>
                 <div class="header">
-                    Update Sales Persons
+                    New Sales Persons
                 </div>
                 <div class="content">
                     <form action="" class="ui form">

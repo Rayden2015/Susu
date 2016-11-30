@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Nurudin Lartey, Emmanuel Asaber, Infinixel">
-    <title>Clients | Daily Susu</title>
-    <link rel="stylesheet" href="css/datatables.min.css">
-    <link rel="stylesheet" href="css/semantic.css">
-    <link rel="stylesheet" href="css/entypo/css/entypo.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/ccss_logo.png">
-</head>
-<body>
+    <?php
+        $page_title = "Clients";
+        require_once('includes/sidebar.php');
+     ?>
     
-    <i class="fa fa-cog" id="overlay"></i>
-    <!-- Sidebar -->
-    <?php include('includes/sidebar.php'); ?>
-    <!-- End of Sidebar -->
 
     <section class="wrapper">
         <div class="toolbar">
@@ -51,21 +38,33 @@
 <!--                            <label for="picture">Picture</label>-->
 <!--                            <input type="file" id="picture">-->
 <!--                        </div>-->
+
+                        <div class="field">
+                            <label for="picture">Picture</label>
+                            <input type="file" name="picture" id="picture">
+                        </div>
                         <div class="field">
                             <label for="full_name">Full Name</label>
                             <input type="text" id="full_name">
                         </div>
                         <div class="field">
-                            <label for="email">Email</label>
-                            <input type="email" id="email">
+                            <label for="dob">Date of Birth</label>
+                            <input type="text" class="datepicker" id="dob">
                         </div>
-                        <div class="field">
-                            <label for="contact">Phone Number</label>
-                            <input type="text" id="contact">
+                        <div class="ui two fields">
+                            <div class="field">
+                                <label for="contact">Phone Number</label>
+                                <input type="text" id="contact">
+                            </div>
+                            <div class="field">
+                                <label for="location">Location</label>
+                                <input type="text" id="location">
+                            </div>
                         </div>
+                        
                         <div class="field">
-                            <label for="location">Location</label>
-                            <input type="text" id="location">
+                            <label for="occupation">Occupation</label>
+                            <input type="text" id="occupation">
                         </div>
 
                     </form>
