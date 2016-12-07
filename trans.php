@@ -119,7 +119,7 @@
                         <div class="field">
                             <label for="date">Date</label>
                             <!-- <input type="text" class="datepicker_time"> -->
-                            <input type="date" class="datepicker" id="date">
+                            <input type="text" class="datepicker" id="date">
                         </div>
                         <?php require_once("php/salesList.php"); ?>
                     </form>
@@ -139,7 +139,7 @@
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/semantic.js"></script>
     <script src="js/jquery.datetimepicker.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/trans.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

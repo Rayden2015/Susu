@@ -218,3 +218,10 @@ body{
 .ui.form .field > .selection.dropdown {
   padding: 9px 14px;
 }
+
+select#transtype {
+  width: 100px;
+}
+.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_ {
+  top: 155px !important;
+}

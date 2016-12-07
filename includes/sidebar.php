@@ -6,6 +6,7 @@
     <meta name="author" content="Nurudin Lartey, Emmanuel Asaber, Infinixel">
     <title><?php echo $page_title ;?> | Daily Susu</title>
     <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
     <link rel="stylesheet" href="css/semantic.css">
     <link rel="stylesheet" href="css/entypo/css/entypo.css">
     <link rel="stylesheet" href="css/style.css">
