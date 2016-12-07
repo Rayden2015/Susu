@@ -225,3 +225,16 @@ select#transtype {
 .xdsoft_datetimepicker.xdsoft_noselect.xdsoft_ {
   top: 155px !important;
 }
+
+#data_table_wrapper.dataTables_wrapper .row {
+  margin-bottom: 20px;
+}
+#data_table_wrapper.dataTables_wrapper .row:last-child {
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+#data_table_filter.dataTables_filter input[type='search'] {
+  height: auto;
+}
+

@@ -96,7 +96,7 @@
     }
 
     if(isset($_GET['loadClients'])){
-           echo '<table id="example" class="display" cellspacing="0" width="100%">
+           echo '<table id="data_table" class="display all_tables" cellspacing="0" width="100%">
             <thead>
             <tr>
                 <th>Name</th>
@@ -108,17 +108,7 @@
                 <th>Edit</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Account Number</th>
-                <th>Balance</th>
-                <th>Contact</th>
-                <th>Sales Person</th>
-                <th>Status</th>
-                <th>Edit</th>
-            </tr>
-        </tfoot>
+        
         <tbody>';
         $result = $clients->loadClients();
         global $database;

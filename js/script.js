@@ -7,6 +7,10 @@ $(document).ready(function() {
         format: 'd-M-Y'
     });
 
+    $('.all_tables').DataTable();
+
+    $('#data_table').DataTable();
+
 	// //clientsInit();
  //    $('.selection.dropdown').dropdown();
 
