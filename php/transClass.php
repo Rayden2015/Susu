@@ -2,7 +2,7 @@
     require_once("database.php");
 
 class trans{
-    public function createTransaction($type, $date, $client, $amount){
+    public function createTransaction($type, $date, $client, $amount,$sales){
         global $database;
         $balance="";
         $query = "Select balance from clients where id=".$client;
@@ -20,7 +20,7 @@ class trans{
         }
  
         $user= $_COOKIE['user_id'];
-        $query = "INSERT INTO `transactions`(`type`, `date`, `client`, `amount`, `balance`, `user`) VALUES ('$type','$date', $client, $amount, $balance, $user  )";
+        $query = "INSERT INTO `transactions`(`type`, `date`, `client`, `amount`, `balance`, `user`,`sales`) VALUES ('$type','$date', $client, $amount, $balance, $user, '$sales' )";
         $result = $database->exec_query($query);
         if ($result == 1){
             $query = "Update clients set balance=".$balance." where id=".$client;
@@ -39,7 +39,7 @@ class trans{
     public function loadTrans(){
         global $database;
         $date = date('d-M-Y');
-        $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
+        $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales
             FROM transactions, users, clients
             WHERE transactions.user = users.id
             AND transactions.client = clients.id
@@ -51,7 +51,7 @@ class trans{
 
     public function loadOneTrans(){
         global $database;
-        $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
+        $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name, transactions.sales
 FROM transactions, users, clients
 WHERE transactions.user = users.id
 AND transactions.client = clients.id ORDER BY id DESC limit 1";
@@ -83,13 +83,13 @@ AND transactions.client = clients.id ORDER BY id DESC limit 1";
         global $database;
         $query = "";
         if($end == ''){
-            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
+            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales
             FROM transactions, users, clients
             WHERE transactions.user = users.id
             AND transactions.client = clients.id
             AND `date` like '$start%' ORDER by id DESC";
         }else{
-            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name
+            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales
             FROM transactions, users, clients
             WHERE transactions.user = users.id
             AND transactions.client = clients.id

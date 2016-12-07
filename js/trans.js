@@ -4,11 +4,6 @@
 
 loadTrans();
 
-$('.datepicker').datetimepicker({
-    timepicker: false,
-    format: 'd-M-Y h:i a'
-});
-
 
 $("#addTransBtn").click(function(){
     $('#add-trans-modal').modal('show');
@@ -20,8 +15,9 @@ $("#createTrans").click(function(){
     data.append("client", $("#client option:selected").val());
     data.append("amount", $("#amount").val());
     //data.append("password", $("#con_pass").val());
-    data.append("date", $(".datepicker_time").val());
+    data.append("date", $("#date").val());
     data.append("type", $("#type option:selected").val());
+    data.append("sales", $("#sales option:selected").val());
 
     var ajax = new XMLHttpRequest();
     ajax.addEventListener("load", completeHandler, false);

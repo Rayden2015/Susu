@@ -13,11 +13,11 @@
                 <input type="text" placeholder="Search Sales Persons" name="q">
                 <i class="icon search"></i>
             </div>
-            <div class="floated right">
+            <!-- <div class="floated right">
                 <div class="ui button blue" id="add-user">
                     <i class="entypo-user"></i> Add Sales Person
                 </div>
-            </div>
+            </div> -->
             <div class="ui divider"></div>
             <br><br>
             
@@ -90,10 +90,7 @@
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.datetimepicker.js"></script>
     <script src="js/semantic.js"></script>
+    <script src="js/sales.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/Sales Persons.js"></script>
-    <script>
-        loadSales Persons();
-    </script>
 </body>
 </html>

@@ -32,6 +32,15 @@ class users{
         return $result;
     }
 
+    public function loadSales(){
+        global $database;
+        $query = "Select * from users where position = 'Sales'";
+        $result = $database->exec_query($query);
+        return $result;
+    }
+
+
+
     public function activate($id, $status){
         global $database;
         $query = "";

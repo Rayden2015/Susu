@@ -52,6 +52,7 @@
                             <th>Amount (GH₵)</th>
                             <th>Balance (GH₵)</th>
                             <th>Cashier</th>
+                            <th>Sales person</th>
                         </tr>
                     </thead>
                     <tbody id="gridBox">
@@ -120,7 +121,7 @@
                             <!-- <input type="text" class="datepicker_time"> -->
                             <input type="date" class="datepicker" id="date">
                         </div>
-                        <php require_once("php/salesList.php"); ?>
+                        <?php require_once("php/salesList.php"); ?>
                     </form>
                 </div>
                 <div class="actions">
