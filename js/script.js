@@ -1,20 +1,18 @@
 $(document).ready(function() {
-    var addUser = $('#add-user');
-    addUser.on('click', function() {
-        $('#add-user-modal').modal('show');
-    });
+    
 
+	//clientsInit();
     $('.selection.dropdown').dropdown();
 
 
-    $('.datepicker').datetimepicker({
-        timepicker: false,
-        format: 'd-M-Y'
-    });
+    // $('.datepicker').datetimepicker({
+    //     timepicker: false,
+    //     format: 'd-M-Y'
+    // });
 
-    $('.datepicker_time').datetimepicker({
-        timepicker: false,
-        format: 'd-M-Y h:i:s'
-    });
+    // $('.datepicker_time').datetimepicker({
+    //     timepicker: false,
+    //     format: 'd-M-Y h:i:s'
+    // });
 });
 

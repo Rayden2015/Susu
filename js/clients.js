@@ -1,27 +1,32 @@
 /**
  * Created by ME on 6/14/15.
  */
+ $('#addClientBtn').click(function(){
+     $('#add-client-modal').modal('show');
+ });
 
-var editBtn = $('.editBtn');
-$(document).on('click', editBtn, function(event) {
-    var $target = event.target;
-    if($target.className == 'editBtn circular flt ui icon button blue' || $target.className == 'write icon') {
-        var data = $target.closest('.clientGrid'),
-            dataId = data.dataset['id'],
-            dataName = data.dataset['name'],
-            dataContact = data.dataset['contact'],
-            dataClient = data.dataset['client'],
-            dataEmail = data.dataset['email'],
-            dataLocation = data.dataset['location'],
-            dataStatus = data.dataset['status'];
-            $("#full_name").val(dataName);
-            $("#email").val(dataEmail);
-            $("#contact").val(dataContact);
-            $("#location").val(dataLocation);
-            $("#id").val(dataId);
-            $('#add-user-modal').modal('show');
-            // console.log(data);
-    }
+
+
+$(".editClientBtn").click(function() {
+    var data = $(this).parents("tr");
+     $("#full_name").val(data.attr("data-name") );
+        $("#email").val(data.attr("data-email"));
+        $("#contact").val( data.attr("data-contact") );
+        $("#unit").val(data.attr("data-unitContribution"));
+        $("#location").val( data.attr("data-location") );
+        $("#dob").val(data.attr("data-dateOfBirth"));
+        $("#kin").val( data.attr("data-nextOfKin") );
+        $("#h_number").val( data.attr("data-houseNumber") );
+        $("#occupation").val( );
+        $("#position option:selected").val( data.attr("data-houseNumber") );
+        $("#sales option:selected").val(data.attr("data-salesPerson")  );
+        $("#sex option:selected").val(data.attr("data-sex"));
+        $("#id").val(data.attr("data-id"));
+        $("#nok").val( data.attr("data-nextOfKin"));
+        $("#acc").val( data.attr("data-accountNumber") );
+
+        $('#add-client-modal').modal('show');
+        //console.log(data);
 });
 
 $("#createClient").click(function() {
@@ -36,9 +41,18 @@ $("#createClient").click(function() {
     data.append("name", $("#full_name").val());
     data.append("email", $("#email").val());
     data.append("contact", $("#contact").val());
+    data.append("unitContribution", $("#unit").val());
     data.append("location", $("#location").val());
+    data.append("dateOfBirth", $("#dob").val());
+    data.append("nextOfKin", $("#kin").val());
+    data.append("houseNumber", $("#h_number").val());
+    data.append("occupation", $("#occupation").val());
     data.append("position", $("#position option:selected").val());
+    data.append("salesPerson", $("#sales option:selected").val());
+    data.append("sex", $("#sex option:selected").val() );
     data.append("id", $("#id").val());
+    data.append("nok", $("#nok").val());
+    data.append("acc", $("#acc").val());
 
 
     var ajax = new XMLHttpRequest();
@@ -51,12 +65,14 @@ $("#createClient").click(function() {
     function completeHandler(event) {
         $(".overlay").hide();
         alert(event.target.responseText);
+        console.log(event.target.responseText);
         loadClients();
     }
 
     function errorHandler(event) {
         $(".overlay").hide();
         alert("Error : " + event.target.responseText);
+        console.log(event.target.responseText);
     }
 
 });
@@ -114,17 +130,14 @@ function search(q) {
 }
 
 
-var actButton = $('#activateClient');
-$(document).on('click', actButton, function(event) {
-    //$('#add-user-modal').modal('hide');
-    //$(".overlay").show();
 
-    var $target     = event.target;
-    var values        = $target.closest('#activateClient');
+$('#activateClientBtn').click(function() {
 
+   $(".overlay").show();
+    var values = $(this).parents("tr");
     data = new FormData();
-    data.append("id", values.dataset['id']);
-    data.append("status", values.dataset['status']);
+    data.append("id", values.attr("data-id") );
+    data.append("status", values.attr("data-status") );
 
     var ajax = new XMLHttpRequest();
     ajax.addEventListener("load",completeHandler, false);
@@ -135,13 +148,21 @@ $(document).on('click', actButton, function(event) {
     function completeHandler(event){
         $(".overlay").hide();
         alert(event.target.responseText);
-        loadUsers();
+        console.log(event.target.responseText);
+        loadClients();
     }
 
     function errorHandler(event){
         $(".overlay").hide();
         alert("Error : "+event.target.responseText);
+        console.log(event.target.responseText);
     }
 });
 
 
+
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+loadClients();

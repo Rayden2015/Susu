@@ -58,7 +58,8 @@
         
        private function confirm_query($result) {
 	if (!$result) {
-	    $output = "Database query failed: " . mysql_error() . "<br /><br />";
+	    //$output = "Database query failed: " . mysql_error() . "<br /><br />";
+      $output = "Database query failed:<br /><br />";
 	    $output .= "Last SQL query: " . $this->last_query;
 	    die( $output );
 	    }

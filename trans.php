@@ -13,7 +13,7 @@
             <h2 class="ui header">Balance : GH₵<span id="bal"></span></h2>
             
             <div class="floated right trans">
-                <div class="ui button blue" id="add-user">
+                <div class="ui button blue" id="addTransBtn">
                     <i class="entypo-switch"></i> New Transaction
                 </div>
             </div>
@@ -87,7 +87,7 @@
         </div>
         
         <!-- Add New Transaction Modal -->
-            <div class="ui modal small" id="add-user-modal">
+            <div class="ui modal small" id="add-trans-modal">
                 <i class="close icon"></i>
                 <div class="header">
                     New Transaction
@@ -118,8 +118,9 @@
                         <div class="field">
                             <label for="date">Date</label>
                             <!-- <input type="text" class="datepicker_time"> -->
-                            <input type="text" class="datepicker" id="date">
+                            <input type="date" class="datepicker" id="date">
                         </div>
+                        <php require_once("php/salesList.php"); ?>
                     </form>
                 </div>
                 <div class="actions">

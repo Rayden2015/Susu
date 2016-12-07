@@ -34,7 +34,7 @@
                     <div class="ui card fluid">
                         <div class="image">
                             <img src="img/steve.jpg" alt="">
-                            <div class="editBtn circular flt ui icon button blue" title="Edit">
+                            <div class="editClientBtn circular flt ui icon button blue" title="Edit">
                                 <i class="write icon"></i>
                             </div>
                         </div>
@@ -88,21 +88,45 @@
     }
 
     if(isset($_GET['createClient'])){
-        echo $clients->createClient($_POST['name'],$_POST['contact'], $_POST['email'], $_POST['location'],'');
+        echo $clients->createClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], "picture",$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'], $_POST['id']);
     }
 
     if(isset($_GET['editClient'])){
-        echo $clients->editClient($_POST['name'],$_POST['contact'], $_POST['email'], $_POST['location'],'', $_POST['id']);
+        echo $clients->editClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], "picture",$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'], $_POST['id']);
     }
 
     if(isset($_GET['loadClients'])){
+           echo '<table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Account Number</th>
+                <th>Balance</th>
+                <th>Contact</th>
+                <th>Sales Person</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Account Number</th>
+                <th>Balance</th>
+                <th>Contact</th>
+                <th>Sales Person</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </tfoot>
+        <tbody>';
         $result = $clients->loadClients();
         global $database;
         while($rows = $database->fetchArray($result)){
             $status = "";
             $color  = "";
             $account = str_pad($rows[0], 4, "0", STR_PAD_LEFT);
-            if($rows[8] == 0){
+            if($rows[7] == 0){
                 $status = "Activate";
                 $color = "blue";
                 $icon = "check";
@@ -111,39 +135,34 @@
                 $color = "red";
                 $icon = "privacy";
             }
+            
+         
+
             echo '
-                <div class="column clientGrid" data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[8].'" >
-                    <div class="ui card fluid">
-                        <div class="image">
-                            
-                            <div class="editBtn circular flt ui icon button blue" title="Edit">
-                                <i class="write icon"></i>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h2 class="ui header">'.$rows[1].'</h2>
-                            <span class="meta">'.$rows[6].$account.'</span>
-                            <div class="description">
-                                <div><strong>Balance: </strong> GHc '.$rows[7].'</div>
-                                <div><strong>Email: </strong> '.$rows[3].'</div>
-                                <div><strong>Location: </strong>'.$rows[4].'</div>
-                                <div><strong>Contact: </strong> '.$rows[2].'</div>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="ui vertical animated button '.$color.'" data-id="'.$rows[0].'" data-status="'.$rows[8].'" id="activateClient">
+        
+            <tr data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[7].'" data-nextOfKin="'.$rows[8].'" data-salesPerson="'.$rows[9].'" data-unitContribution="'.$rows[10].'" data-houseNumber="'.$rows[11].'" data-dateOfBirth="'.$rows[14].'" data-accountNumber="'.$rows[15].'" data-sex="'.$rows[16].'">
+                <th>'.$rows[1].'</th>
+                <th>'.$rows[15].'</th>
+                <th>'.$rows[6].'</th>
+                <th>'.$rows[2].'</th>
+                <th>'.$rows[9].'</th>
+                <th><div class="ui vertical animated button '.$color.'" data-id="'.$rows[0].'" data-status="'.$rows[7].'" id="activateClientBtn">
 
                                     <div class="visible content">'.$status.'</div>
                                     <div class="hidden content">
                                         <i class="'.$icon.' icon"></i>
                                     </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ';
+                            </div></th>
+                <th> <div class="editBtn editClientBtn circular flt ui icon button blue" title="Edit">
+                                <i class="write icon"></i>
+                            </div></th>
+            </tr>'
+        ;
+
         }
+         echo ' </tbody>
+    </table>';
     }
 
     if(isset($_GET['createTrans'])){

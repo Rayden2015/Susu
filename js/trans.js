@@ -9,6 +9,11 @@ $('.datepicker').datetimepicker({
     format: 'd-M-Y h:i a'
 });
 
+
+$("#addTransBtn").click(function(){
+    $('#add-trans-modal').modal('show');
+});
+
 $("#createTrans").click(function(){
     $(".overlay").show();
     data = new FormData();
@@ -27,6 +32,7 @@ $("#createTrans").click(function(){
     function completeHandler(event){
         $(".overlay").hide();
         alert(event.target.responseText);
+        console.log(event.target.responseText);
         loadOneTrans();
         $("#amount").val('');
         $("#datepicker").val('');
@@ -35,6 +41,7 @@ $("#createTrans").click(function(){
     function errorHandler(event){
         $(".overlay").hide();
         alert("Error : "+event.target.responseText);
+        console.log(event.target.responseText);
     }
 
 });
