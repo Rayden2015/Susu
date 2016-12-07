@@ -1,0 +1,72 @@
+Clients
++------------------+--------------+------+-----+---------+----------------+
+| id               | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name             | varchar(100) | NO   |     | NULL    |                |
+| contact          | varchar(10)  | NO   |     | NULL    |                |
+| email            | varchar(100) | NO   |     | NULL    |                |
+| location         | varchar(150) | NO   |     | NULL    |                |
+| picture          | varchar(255) | YES  |     | NULL    |                |
+| balance          | double       | YES  |     | NULL    |                |
+| status           | varchar(1)   | NO   |     | 1       |                |
+| nextOfKin        | varchar(100) | YES  |     | NULL    |                |
+| salesPerson      | varchar(100) | YES  |     | NULL    |                |
+| unitContribution | varchar(10)  | YES  |     | NULL    |                |
+| houseNumber      | varchar(50)  | YES  |     | NULL    |                |
+| created_at       | datetime     | YES  |     | NULL    |                |
+| modified_at      | datetime     | YES  |     | NULL    |                |
+| dateOfBirth      | varchar(50)  | YES  |     | NULL    |                |
+| accountNumber    | varchar(10)  | YES  |     | NULL    |                |
+| sex              | varchar(6)   | YES  |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+
+
+
+
+Transactions Table;
++------------------+--------------+------+-----+---------+----------------+
+| id               | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name             | varchar(100) | NO   |     | NULL    |                |
+| contact          | varchar(10)  | NO   |     | NULL    |                |
+| email            | varchar(100) | NO   |     | NULL    |                |
+| location         | varchar(150) | NO   |     | NULL    |                |
+| picture          | varchar(255) | YES  |     | NULL    |                |
+| balance          | double       | YES  |     | NULL    |                |
+| status           | varchar(1)   | NO   |     | 1       |                |
+| nextOfKin        | varchar(100) | YES  |     | NULL    |                |
+| salesPerson      | varchar(100) | YES  |     | NULL    |                |
+| unitContribution | varchar(10)  | YES  |     | NULL    |                |
+| houseNumber      | varchar(50)  | YES  |     | NULL    |                |
+| created_at       | datetime     | YES  |     | NULL    |                |
+| modified_at      | datetime     | YES  |     | NULL    |                |
+| dateOfBirth      | varchar(50)  | YES  |     | NULL    |                |
+| accountNumber    | varchar(10)  | YES  |     | NULL    |                |
+| sex              | varchar(6)   | YES  |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+
+
+
+
+Users Tables;
+
++------------------+--------------+------+-----+---------+----------------+
+| id               | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name             | varchar(100) | NO   |     | NULL    |                |
+| contact          | varchar(10)  | NO   |     | NULL    |                |
+| email            | varchar(100) | NO   |     | NULL    |                |
+| location         | varchar(150) | NO   |     | NULL    |                |
+| picture          | varchar(255) | YES  |     | NULL    |                |
+| balance          | double       | YES  |     | NULL    |                |
+| status           | varchar(1)   | NO   |     | 1       |                |
+| nextOfKin        | varchar(100) | YES  |     | NULL    |                |
+| salesPerson      | varchar(100) | YES  |     | NULL    |                |
+| unitContribution | varchar(10)  | YES  |     | NULL    |                |
+| houseNumber      | varchar(50)  | YES  |     | NULL    |                |
+| created_at       | datetime     | YES  |     | NULL    |                |
+| modified_at      | datetime     | YES  |     | NULL    |                |
+| dateOfBirth      | varchar(50)  | YES  |     | NULL    |                |
+| accountNumber    | varchar(10)  | YES  |     | NULL    |                |
+| sex              | varchar(6)   | YES  |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+
+
+
