@@ -1,5 +1,10 @@
 loadUsers();
 
+$("#addUserBtn").click(function(){
+    $("#add-user-modal").modal('show');
+    
+});
+
 var editBtn = $('.editBtn');
 $(document).on('click', editBtn, function(event) {
     var $target = event.target;

@@ -171,11 +171,6 @@
                     <td>'.$rows[5].'</td>
                     <td>'.$rows[6].'</td>
                     <td>'.$rows[7].'</td>
-                    <td>
-                        <div class="fluid ui icon button blue editTrans" title="Edit">
-                            <i class="write icon"></i> Edit
-                        </div>
-                    </td>
                 </tr>
             ';
         }
