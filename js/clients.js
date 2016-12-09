@@ -11,6 +11,14 @@ loadClients();
      $('#add-client-modal').modal('show');
  });
 
+ $('#acc_type').on('change', function() {
+    if($(this).val() == 'Deposit Account') {
+        $('#uc').hide();
+    } else {
+        $('#uc').show();
+    }
+});
+
 
 
 

@@ -4,6 +4,7 @@ $('#addUserBtn').click(function(){
      $('#add-user-modal').modal('show');
 });
 
+
 $('#position').on('change', function() {
     var positionVal = $(this).val();
     if(positionVal == 'Sales') {
