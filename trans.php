@@ -104,6 +104,7 @@
                 <div class="content">
                     <form action="" class="ui form">
                         <input type="hidden" id="id" name="id" />
+                        <?php require_once("php/salesList.php"); ?>
                         <div class="field">
                             <label for="type">Transaction Type</label>
                             <select class="ui selection dropdown" id="type">
@@ -129,7 +130,7 @@
                             <!-- <input type="text" class="datepicker_time"> -->
                             <input type="text" class="datepicker" id="date">
                         </div>
-                        <?php require_once("php/salesList.php"); ?>
+                        
                     </form>
                 </div>
                 <div class="actions">
