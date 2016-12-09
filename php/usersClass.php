@@ -27,7 +27,7 @@ class users{
 
     public function loadUsers(){
         global $database;
-        $query = "Select * from users";
+        $query = "Select * from users where position = 'Manager' OR position = 'Director'";
         $result = $database->exec_query($query);
         return $result;
     }

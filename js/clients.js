@@ -1,9 +1,11 @@
 /**
  * Created by ME on 6/14/15.
  */
-$(document).ready(function() {
-    $('#data_tale').DataTable();
-});
+// $(document).ready(function() {
+//     $('#data_tale').DataTable();
+// });
+
+loadClients();
 
  $('#addClientBtn').click(function(){
      $('#add-client-modal').modal('show');
@@ -170,4 +172,4 @@ $('#activateClientBtn').click(function() {
 
 
 
-loadClients();
+

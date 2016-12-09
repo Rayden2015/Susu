@@ -1,5 +1,18 @@
 loadUsers();
 
+$('#addUserBtn').click(function(){
+     $('#add-user-modal').modal('show');
+});
+
+$('#position').on('change', function() {
+    var positionVal = $(this).val();
+    if(positionVal == 'Sales') {
+        $('#varies').hide();
+    } else {
+        $('#varies').show();
+    }
+});
+
 var editBtn = $('.editBtn');
 $(document).on('click', editBtn, function(event) {
     var $target = event.target;
