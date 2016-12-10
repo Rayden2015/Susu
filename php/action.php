@@ -101,6 +101,7 @@
             <tr>
                 <th>Name</th>
                 <th>Account Number</th>
+                <th>Account Type</th>
                 <th>Balance</th>
                 <th>Contact</th>
                 <th>Sales Person</th>
@@ -130,9 +131,10 @@
 
             echo '
         
-            <tr data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[7].'" data-nextOfKin="'.$rows[8].'" data-salesPerson="'.$rows[9].'" data-unitContribution="'.$rows[10].'" data-houseNumber="'.$rows[11].'" data-dateOfBirth="'.$rows[14].'" data-accountNumber="'.$rows[15].'" data-sex="'.$rows[16].'">
+            <tr data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[7].'" data-nextOfKin="'.$rows[8].'" data-salesPerson="'.$rows[9].'" data-unitContribution="'.$rows[10].'" data-houseNumber="'.$rows[11].'" data-dateOfBirth="'.$rows[14].'" data-accountNumber="'.$rows[15].'" data-sex="'.$rows[16].'" data-accountType="'.$rows[17].'" >
                 <td>'.$rows[1].'</td>
                 <td>'.$rows[15].'</td>
+                <td>'.$rows[17].'</td>
                 <td>'.$rows[6].'</td>
                 <td>'.$rows[2].'</td>
                 <td>'.$rows[9].'</td>
@@ -260,6 +262,25 @@ if(isset($_GET['loadTransWithin'])){
             ';
         }
     }
+
+
+if(isset($_GET['clients_per_salesPerson'])){
+    $result  = $clients->clients_per_salesPerson($_POST['salesPerson']);
+    global $database;
+echo '<div class="field">
+                <label for="type">Clients</label>
+                <select class="ui selection dropdown" id="client">
+                    <div class="menu">';
+while($rows = $database->fetchArray($result)){
+    echo '<option value="'.$rows[0].'">'.$rows[1].'</option>';
+}
+echo    '</div>
+                </select>
+        </div>
+        ';
+
+
+}
 
 
 ?>

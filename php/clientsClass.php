@@ -2,10 +2,18 @@
     require_once("database.php");
 
 class clients{
-    public function createClient($name, $contact, $email, $location, $picture,$nextOfKin,$salesPerson, $unitContribution, $houseNumber, $dateOfBirth, $sex){
+
+    public function clients_per_salesPerson($salesPerson){
+        global $database;
+        $query = "Select * from clients where salesPerson ='$salesPerson'";
+        $result = $database->exec_query($query);
+        return $result;
+    }
+
+    public function createClient($name, $contact, $email, $location, $picture,$nextOfKin,$salesPerson, $unitContribution, $houseNumber, $dateOfBirth, $sex, $accountType){
         $year = date("Y");
         global $database;
-        $query = "INSERT INTO `clients`(`name`,`contact`,`email`, `location`,`nextOfKin`,`salesPerson`,`unitContribution`, `houseNumber`, `dateOfBirth`,`sex`) VALUES ('$name', '$contact', '$email', '$location','$nextOfKin','$salesPerson', '$unitContribution', '$houseNumber', '$dateOfBirth','$sex')";
+        $query = "INSERT INTO `clients`(`name`,`contact`,`email`, `location`,`nextOfKin`,`salesPerson`,`unitContribution`, `houseNumber`, `dateOfBirth`,`sex`,`accountType`) VALUES ('$name', '$contact', '$email', '$location','$nextOfKin','$salesPerson', '$unitContribution', '$houseNumber', '$dateOfBirth','$sex','$accountType')";
         $result = $database->exec_query($query);
         if ($result ==1){
             $query = "Select id from clients order by id desc limit 1";
@@ -31,9 +39,9 @@ class clients{
         }
     }
 
-     public function editClient($name, $contact, $email, $location, $picture,$nextOfKin,$salesPerson, $unitContribution, $houseNumber, $dateOfBirth, $sex, $id){
+     public function editClient($name, $contact, $email, $location, $picture,$nextOfKin,$salesPerson, $unitContribution, $houseNumber, $dateOfBirth, $sex,$accountType,$id){
         global $database;
-        $query = "UPDATE `clients` SET `name` ='$name',`contact`='$contact',`email`='$email', `location` ='$location',`nextOfKin` = '$nextOfKin',`salesPerson` ='$salesPerson',`unitContribution` ='$unitContribution', `houseNumber` ='$houseNumber', `dateOfBirth`='$dateOfBirth',`sex`='$sex' WHERE `id`=".$id;
+        $query = "UPDATE `clients` SET `name` ='$name',`contact`='$contact',`email`='$email', `location` ='$location',`nextOfKin` = '$nextOfKin',`salesPerson` ='$salesPerson',`unitContribution` ='$unitContribution', `houseNumber` ='$houseNumber', `dateOfBirth`='$dateOfBirth',`sex`='$sex',`accountType` ='$accountType' WHERE `id`=".$id;
         $result = $database->exec_query($query);
         if ($result ==1){
             return "Client Updated Successfully";

@@ -119,7 +119,9 @@
                             </select>
                         </div>
 
-                       <?php require_once("php/clientsList.php");?>
+                       <div id="salesPersonContainer">
+                           
+                       </div>
 
                         <div class="field">
                             <label for="amount">Amount</label>

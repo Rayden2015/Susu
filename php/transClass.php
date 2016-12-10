@@ -2,6 +2,8 @@
     require_once("database.php");
 
 class trans{
+
+    
     public function createTransaction($type, $date, $client, $amount,$sales){
         global $database;
         $balance="";

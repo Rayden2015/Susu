@@ -49,8 +49,8 @@
                             </div>
                         </select>
                     </div>
-                    <div class="ui two fields" id="varies">
-                        <div class="field">
+                    <div class="ui two fields" >
+                        <div class="field varies">
                             <label for="username">Username</label>
                             <input type="text" id="username">
                         </div>

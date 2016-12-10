@@ -8,6 +8,7 @@
 loadClients();
 
  $('#addClientBtn').click(function(){
+     $("#id").val('');
      $('#add-client-modal').modal('show');
  });
 
@@ -39,6 +40,8 @@ $(".editClientBtn").click(function() {
         $("#id").val(data.attr("data-id"));
         $("#nok").val( data.attr("data-nextOfKin"));
         $("#acc").val( data.attr("data-accountNumber") );
+        $('#acc_type').val( data.attr("data-accountType")  );
+
 
         $('#add-client-modal').modal('show');
         //console.log(data);
@@ -68,6 +71,7 @@ $("#createClient").click(function() {
     data.append("id", $("#id").val());
     data.append("nok", $("#nok").val());
     data.append("acc", $("#acc").val());
+    data.append("accountType", $('#acc_type').val());
 
 
     var ajax = new XMLHttpRequest();

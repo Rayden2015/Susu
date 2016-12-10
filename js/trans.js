@@ -117,30 +117,37 @@ function search(q, against) {
 
 $('[name=d]').keyup(function () {
     search($(this).val(),'td:nth-child(1)');
+    console.log("Search by ");
     sum();
 });
 
+
+//Search by Client
 $('[name=c]').keyup(function () {
     search($(this).val(),'td:nth-child(2)');
+    console.log("Search by Client");
     sum();
 });
 
 $('[name=s]').keyup(function () {
     search($(this).val(),'td:nth-child(7)');
+    console.log("Search by Salesperson");
     sum();
 });
 
+//Search by Transaction Type
 $('[name=t]').change(function (){
+    console.log("Search by Transaction Type");
     if($(this).val() == 'All'){
         $('#gridBox tr ').each(function () {
             $(this).show();
         });
-        sum();
     }else{
         $('#gridBox tr').hide();
         search($(this).val(),'td:nth-child(3)');
-        sum();
     }
+
+    sum();
 });
 
 
@@ -166,13 +173,10 @@ function sum(){
             operand = parseInt(operand);
             deposits = deposits + operand;
         }
-
+        console.log("Summation Executed");
     });
 
     balance = deposits - withdrawals;
-    //alert("Withdrawals : "+withdrawals);
-    //alert("Deposits : "+deposits);
-    //alert("Balance : "+balance);
     $("#depo").html(deposits);
     $("#with").html(withdrawals);
     $("#bal").html(balance);
@@ -197,12 +201,13 @@ function loadTransWithin(start, end){
         $(".overlay").hide();
         //alert(event.target.responseText);
         $("#gridBox").html(event.target.responseText);
-        sum();
+        
        if($("#end").val() == ''){
            $("#time").html(' : '+$("#start").val());
        }else{
            $("#time").html('From '+$("#start").val()+' To '+$("#end").val());
        }
+       sum();
     }
 
     function errorHandler(event){
@@ -211,3 +216,32 @@ function loadTransWithin(start, end){
     }
 }
 
+
+
+//Populating Clients on Selecting Salesperson
+function getClientsPerSalesPerson(){
+    data = new FormData();
+    data.append("salesPerson", $("#sales option:selected").val());
+
+    var ajax = new XMLHttpRequest();
+    ajax.addEventListener("load",completeHandler, false);
+    ajax.addEventListener("error", errorHandler, false);
+    ajax.open("POST", "php/action.php?clients_per_salesPerson=''");
+    ajax.send(data);
+
+    function completeHandler(event){
+        //alert(event.target.responseText);
+        $("#salesPersonContainer").html(event.target.responseText);
+        console.log("Called getClientsPerSalesPerson successfully ");
+    }
+
+    function errorHandler(event){
+        alert("Error : "+event.target.responseText);
+         console.log("getClientsPerSalesPerson Failed ");
+    }
+}
+
+
+$("#sales").change(function(){
+    getClientsPerSalesPerson();
+});
