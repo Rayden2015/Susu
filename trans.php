@@ -39,12 +39,7 @@
                 <i class="icon search"></i>
             </div>
 
-            <select class="ui selection dropdown" name="salesperson" id="salesperson" style="top: 3px">
-                <div class="menu">
-                    <option class="item">Sales 1 - Jennifer Mensah</option>
-                    <option class="item">Sales 2 - Mercy Ofei</option>
-                </div>
-            </select>
+            
 
             <select class="ui selection dropdown" name="t" id="transtype" style="top: 3px">
                 <div class="menu">

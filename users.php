@@ -50,11 +50,11 @@
                         </select>
                     </div>
                     <div class="ui two fields" >
-                        <div class="field varies">
+                        <div class="field">
                             <label for="username">Username</label>
                             <input type="text" id="username">
                         </div>
-                        <div class="field">
+                        <div class="field varies">
                             <label for="password">Password</label>
                             <input type="password" id="password">
                         </div>
