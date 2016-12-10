@@ -238,3 +238,6 @@ select#transtype {
   height: auto;
 }
 
+table {
+  width: 100%;
+}
