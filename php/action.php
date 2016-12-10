@@ -96,7 +96,7 @@
     }
 
     if(isset($_GET['loadClients'])){
-           echo '<table id="data_table" class="display all_tables" cellspacing="0" width="100%">
+           echo '<table>
             <thead>
             <tr>
                 <th>Name</th>
@@ -131,22 +131,22 @@
             echo '
         
             <tr data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[7].'" data-nextOfKin="'.$rows[8].'" data-salesPerson="'.$rows[9].'" data-unitContribution="'.$rows[10].'" data-houseNumber="'.$rows[11].'" data-dateOfBirth="'.$rows[14].'" data-accountNumber="'.$rows[15].'" data-sex="'.$rows[16].'">
-                <th>'.$rows[1].'</th>
-                <th>'.$rows[15].'</th>
-                <th>'.$rows[6].'</th>
-                <th>'.$rows[2].'</th>
-                <th>'.$rows[9].'</th>
-                <th><div class="ui vertical animated button '.$color.'" data-id="'.$rows[0].'" data-status="'.$rows[7].'" id="activateClientBtn">
+                <td>'.$rows[1].'</td>
+                <td>'.$rows[15].'</td>
+                <td>'.$rows[6].'</td>
+                <td>'.$rows[2].'</td>
+                <td>'.$rows[9].'</td>
+                <td><div class="ui vertical animated button '.$color.'" data-id="'.$rows[0].'" data-status="'.$rows[7].'" id="activateClientBtn">
 
                                     <div class="visible content">'.$status.'</div>
                                     <div class="hidden content">
                                         <i class="'.$icon.' icon"></i>
                                     </div>
 
-                            </div></th>
-                <th> <div class="editBtn editClientBtn circular flt ui icon button blue" title="Edit">
+                            </div></td>
+                <td> <div class="editBtn editClientBtn circular flt ui icon button blue" title="Edit">
                                 <i class="write icon"></i>
-                            </div></th>
+                            </div></td>
             </tr>'
         ;
 

@@ -38,18 +38,30 @@
 <!--                            <label for="picture">Picture</label>-->
 <!--                            <input type="file" id="picture">-->
 <!--                        </div>-->
-
-                        <div class="field">
-                            <label for="picture">Picture</label>
-                            <input type="file" name="picture" id="picture">
+                        <div class="ui two fields">
+                            <div class="field">
+                                <label for="picture">Picture</label>
+                                <input type="file" name="picture" id="picture">
+                            </div>
+                            
+                            <div class="field">
+                                <label for="acc_type">Account Type</label>
+                                <select name="acc_type" id="acc_type" class="selection ui dropdown">
+                                    <div class="menu">
+                                        <option class="item">Susu Account</option>
+                                        <option class="item">Deposit Account</option>
+                                    </div>
+                                </select>
+                            </div>
                         </div>
+                        
                         
                         <div class="ui two fields">
                         <div class="field">
                             <label for="full_name">Full Name</label>
                             <input type="text" id="full_name">
                         </div>
-                        <div class="field">
+                        <div class="field" id="uc">
                             <label for="unit">Unit Contribution</label>
                             <input type="text" id="unit">
                         </div>
@@ -127,7 +139,7 @@
     
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.datetimepicker.js"></script>
-    <script src="js/datatables.min.js"></script>
+    <!-- <script src="js/datatables.min.js"></script> -->
     <script src="js/semantic.js"></script>    
     <script src="js/clients.js"></script>
     <script src="js/script.js"></script>

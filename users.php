@@ -14,7 +14,7 @@
             <i class="icon search"></i>
         </div>
         <div class="floated right">
-            <div class="ui button blue" id="add-user">
+            <div class="ui button blue" id="addUserBtn">
                 <i class="entypo-user-add"></i> Add User
             </div>
         </div>
@@ -23,7 +23,10 @@
         <div class="ui two column grid" id="gridBox">
          </div>
 
-        <!-- Add New User Modal -->
+        
+        
+    </div>
+    <!-- Add New User Modal -->
         <div class="ui modal small" id="add-user-modal">
             <i class="close icon"></i>
             <div class="header">
@@ -41,11 +44,12 @@
                         <select class="ui selection dropdown" id="position">
                             <div class="menu">
                                 <option class="item">Manager</option>
-                                <option class="item">Diretor</option>
+                                <option class="item">Director</option>
+                                <option class="item">Sales</option>
                             </div>
                         </select>
                     </div>
-                    <div class="ui two fields">
+                    <div class="ui two fields" id="varies">
                         <div class="field">
                             <label for="username">Username</label>
                             <input type="text" id="username">
@@ -66,14 +70,6 @@
                             <input type="text" id="contact">
                         </div>
                     </div>
-                    <div class="field">
-                        <label for="location">Location</label>
-                        <input type="text" id="location">
-                    </div>
-                    <div class="field">
-                        <label for="contact">Contact</label>
-                        <input type="text" id="contact">
-                    </div>
                 </form>
             </div>
             <div class="actions">
@@ -87,12 +83,12 @@
             </div>
         </div>
         <!-- End of modal -->
-    </div>
 </section>
 
 <script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery.datetimepicker.js"></script>
 <script src="js/semantic.js"></script>
-<script src="js/script.js"></script>
 <script src="js/users.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

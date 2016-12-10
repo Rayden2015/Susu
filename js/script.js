@@ -12,7 +12,7 @@ $(document).ready(function() {
     $('#data_table').DataTable();
 
 	// //clientsInit();
- //    $('.selection.dropdown').dropdown();
+    $('.ui.selection.dropdown').dropdown();
 
 
     

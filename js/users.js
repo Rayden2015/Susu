@@ -1,8 +1,23 @@
 loadUsers();
 
+<<<<<<< HEAD
 $("#addUserBtn").click(function(){
     $("#add-user-modal").modal('show');
     
+=======
+$('#addUserBtn').click(function(){
+     $('#add-user-modal').modal('show');
+});
+
+
+$('#position').on('change', function() {
+    var positionVal = $(this).val();
+    if(positionVal == 'Sales') {
+        $('#varies').hide();
+    } else {
+        $('#varies').show();
+    }
+>>>>>>> fc427e34d3198e97712b8113c7b24ad26eb42aa4
 });
 
 var editBtn = $('.editBtn');

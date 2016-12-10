@@ -29,6 +29,7 @@
             <div class="ui blue button" id="loadData">
                 Load
             </div>
+            <br>
             <div class="ui input icon" style="margin-left: 0px">
                 <input type="text" placeholder="Search by Client" name="c">
                 <i class="icon search"></i>
@@ -38,7 +39,14 @@
                 <i class="icon search"></i>
             </div>
 
-            <select class="ui selection dropdown" name="t" id="transtype">
+            <select class="ui selection dropdown" name="salesperson" id="salesperson" style="top: 3px">
+                <div class="menu">
+                    <option class="item">Sales 1 - Jennifer Mensah</option>
+                    <option class="item">Sales 2 - Mercy Ofei</option>
+                </div>
+            </select>
+
+            <select class="ui selection dropdown" name="t" id="transtype" style="top: 3px">
                 <div class="menu">
                     <option class="item">All</option>
                     <option class="item">Deposit</option>
@@ -100,6 +108,7 @@
                 <div class="content">
                     <form action="" class="ui form">
                         <input type="hidden" id="id" name="id" />
+                        <?php require_once("php/salesList.php"); ?>
                         <div class="field">
                             <label for="type">Transaction Type</label>
                             <select class="ui selection dropdown" id="type">
@@ -125,7 +134,7 @@
                             <!-- <input type="text" class="datepicker_time"> -->
                             <input type="text" class="datepicker" id="date">
                         </div>
-                        <?php require_once("php/salesList.php"); ?>
+                        
                     </form>
                 </div>
                 <div class="actions">
