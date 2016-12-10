@@ -117,10 +117,17 @@ function search(q, against) {
 
 $('[name=d]').keyup(function () {
     search($(this).val(),'td:nth-child(1)');
+    sum();
 });
 
 $('[name=c]').keyup(function () {
     search($(this).val(),'td:nth-child(2)');
+    sum();
+});
+
+$('[name=s]').keyup(function () {
+    search($(this).val(),'td:nth-child(7)');
+    sum();
 });
 
 $('[name=t]').change(function (){
@@ -128,9 +135,11 @@ $('[name=t]').change(function (){
         $('#gridBox tr ').each(function () {
             $(this).show();
         });
+        sum();
     }else{
         $('#gridBox tr').hide();
         search($(this).val(),'td:nth-child(3)');
+        sum();
     }
 });
 
@@ -149,11 +158,11 @@ function sum(){
 
     $("#gridBox tr ").each(function(){
         if($(this).find("td:nth-child(3)").html() == 'Withdrawal' ){
-            var operand = $(this).find("td:nth-child(4)").html();
+            var operand = $(this).find("td:nth-child(4)").filter(":visible").html();
             operand = parseInt(operand);
             withdrawals = withdrawals + operand;
         }else{
-            var operand = $(this).find("td:nth-child(4)").html();
+            var operand = $(this).find("td:nth-child(4)").filter(":visible").html();
             operand = parseInt(operand);
             deposits = deposits + operand;
         }

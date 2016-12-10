@@ -33,6 +33,10 @@
                 <input type="text" placeholder="Search by Client" name="c">
                 <i class="icon search"></i>
             </div>
+            <div class="ui input icon" style="margin-left: 0px">
+                <input type="text" placeholder="Search by Salesperson" name="s">
+                <i class="icon search"></i>
+            </div>
 
             <select class="ui selection dropdown" name="t" id="transtype">
                 <div class="menu">
