@@ -1,11 +1,10 @@
+loadClients();
 /**
  * Created by ME on 6/14/15.
  */
 // $(document).ready(function() {
 //     $('#data_tale').DataTable();
 // });
-
-loadClients();
 
  $('#addClientBtn').click(function(){
      $("#id").val('');
@@ -21,7 +20,7 @@ loadClients();
 });
 
 
-
+$(".editClientBtn").bind("click");
 
 $(".editClientBtn").click(function() {
     var data = $(this).parents("tr");
@@ -42,10 +41,10 @@ $(".editClientBtn").click(function() {
         $("#acc").val( data.attr("data-accountNumber") );
         $('#acc_type').val( data.attr("data-accountType")  );
 
-
         $('#add-client-modal').modal('show');
         //console.log(data);
 });
+
 
 $("#createClient").click(function() {
     var url ="";
@@ -149,6 +148,7 @@ function search(q) {
 }
 
 
+$("#activateClientBtn").bind("click");
 
 $('#activateClientBtn').click(function() {
 
@@ -177,11 +177,4 @@ $('#activateClientBtn').click(function() {
         console.log(event.target.responseText);
     }
 });
-
-
-
-
-
-
-
 

@@ -88,11 +88,11 @@
     }
 
     if(isset($_GET['createClient'])){
-        echo $clients->createClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], "picture",$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'], $_POST['id']);
+        echo $clients->createClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], "picture",$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'],$_POST['accountType'], $_POST['id']);
     }
 
     if(isset($_GET['editClient'])){
-        echo $clients->editClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], "picture",$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'], $_POST['id']);
+        echo $clients->editClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], "picture",$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'],$_POST['accountType'], $_POST['id']);
     }
 
     if(isset($_GET['loadClients'])){
