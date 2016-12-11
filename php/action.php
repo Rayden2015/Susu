@@ -13,6 +13,7 @@
     if(isset($_GET['editUser'])){
         echo $users->editUser($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_POST['username'], $_POST['password'], $_POST['position'],$_POST['id']);
     }
+    
 
     if(isset($_GET['loadUsers'])){
         $result = $users->loadUsers();
@@ -63,9 +64,9 @@
         }
     }
 
-    if(isset($_GET['login'])){
-        echo $users->login($_POST['username'], $_POST['password']);
-    }
+    // if(isset($_GET['login'])){
+    //     echo $users->login($_POST['username'], $_POST['password']);
+    // }
 
     if(isset($_POST['login'])){
         if($_POST['username']=="admin" && $_POST['password'] == "password"){
@@ -88,7 +89,7 @@
     }
 
     if(isset($_GET['createClient'])){
-        echo $clients->createClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], "picture",$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'],$_POST['accountType'], $_POST['id']);
+        echo $clients->createClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_FILES['picture'],$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'],$_POST['accountType']);
     }
 
     if(isset($_GET['editClient'])){
@@ -99,6 +100,7 @@
            echo '<table>
             <thead>
             <tr>
+                <th>Picture</th>
                 <th>Name</th>
                 <th>Account Number</th>
                 <th>Account Type</th>
@@ -132,6 +134,7 @@
             echo '
         
             <tr data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[7].'" data-nextOfKin="'.$rows[8].'" data-salesPerson="'.$rows[9].'" data-unitContribution="'.$rows[10].'" data-houseNumber="'.$rows[11].'" data-dateOfBirth="'.$rows[14].'" data-accountNumber="'.$rows[15].'" data-sex="'.$rows[16].'" data-accountType="'.$rows[17].'" >
+                <td><img src="img/'.$rows[5].'"></td>
                 <td>'.$rows[1].'</td>
                 <td>'.$rows[15].'</td>
                 <td>'.$rows[17].'</td>

@@ -55,6 +55,7 @@ $("#createClient").click(function() {
     }
     $(".overlay").show();
     data = new FormData();
+    data.append("picture", $("#picture")[0].files[0]);
     data.append("name", $("#full_name").val());
     data.append("email", $("#email").val());
     data.append("contact", $("#contact").val());

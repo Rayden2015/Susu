@@ -1,3 +1,11 @@
+<?php
+    if(!isset($_COOKIE['username'])){
+        echo "Not login in";
+        header('Location:index.php');
+    }
+?>
+
+
     <?php
         $page_title = "Clients";
         require_once('includes/sidebar.php');
@@ -32,12 +40,9 @@
                     New Client
                 </div>
                 <div class="content">
-                    <form action="" class="ui form">
+                    <form action="" class="ui form" enctype="multipart/form-data">
                         <input type="hidden" id="id" name="id">
-<!--                        <div class="field">-->
-<!--                            <label for="picture">Picture</label>-->
-<!--                            <input type="file" id="picture">-->
-<!--                        </div>-->
+
                         <div class="ui two fields">
                             <div class="field">
                                 <label for="picture">Picture</label>

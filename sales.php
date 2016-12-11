@@ -1,4 +1,12 @@
 <?php
+    if(!isset($_COOKIE['username'])){
+        echo "Not login in";
+        header('Location:index.php');
+    }
+?>
+
+
+<?php
         $page_title = "Sales Persons";
         require_once('includes/sidebar.php');
      ?>

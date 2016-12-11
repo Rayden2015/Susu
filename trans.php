@@ -1,7 +1,15 @@
-    <?php
-        $page_title = "Transactions";
-        require_once('includes/sidebar.php');
-     ?>
+<?php
+    if(!isset($_COOKIE['username'])){
+        echo "Not login in";
+        header('Location:index.php');
+    }
+?>
+
+
+<?php
+    $page_title = "Transactions";
+    require_once('includes/sidebar.php');
+ ?>
 
     <section class="wrapper">
         <div class="toolbar">
