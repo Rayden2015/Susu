@@ -7,7 +7,7 @@ loadClients();
 // });
 
  $('#addClientBtn').click(function(){
-     $("#id").val('');
+     $("#add-client-modal").find('input').val("");
      $('#add-client-modal').modal('show');
  });
 

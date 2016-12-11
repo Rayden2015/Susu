@@ -6,6 +6,7 @@ loadTrans();
 
 
 $("#addTransBtn").click(function(){
+    $("#add-trans-modal").find('input').val("");
     $('#add-trans-modal').modal('show');
 });
 

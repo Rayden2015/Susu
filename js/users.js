@@ -1,7 +1,8 @@
 loadUsers();
 
 $('#addUserBtn').click(function(){
-     $('#add-user-modal').modal('show');
+    $("#add-user-modal").find('input').val("");
+    $('#add-user-modal').modal('show');
 });
 
 
