@@ -1,4 +1,6 @@
-// $(document).ready(function() {
+$(document).ready(function() {
+
+    autoLogout(10); 
     
     $('.datepicker').datetimepicker({
         timepicker: false,
@@ -29,35 +31,30 @@
         console.log("Auto Logout Called"); 
 
         function deleteAllCookies() {
-        var cookies = document.cookie.split(";");
+            var cookies = document.cookie.split(";");
 
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i];
-            var eqPos = cookie.indexOf("=");
-            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+            
+            console.log("All Cookies Deleted");
         }
-        
-        console.log("All Cookies Deleted");
-    }
 
-    function timerIncrement() {
-        idleTime = idleTime + 1;
-        if (idleTime >time) { //
-            //window.location.reload();
-            deleteAllCookies();
-            window.location.href = "logout.php";
+        function timerIncrement() {
+            idleTime = idleTime + 1;
+            if (idleTime >time) { //
+                //window.location.reload();
+                deleteAllCookies();
+                window.location.href = "logout.php";
+            }
+            console.log("Time Incremented");
         }
-        console.log("Time Incremented");
-    }
     }
 
-
-
-    
    
-
-   autoLogout(10); 
-// });
+});
 
 

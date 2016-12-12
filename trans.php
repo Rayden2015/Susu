@@ -63,6 +63,7 @@
                         <tr>
                             <th>Date</th>
                             <th>Client</th>
+                            <th>Account Number</th>
                             <th>Type</th>
                             <th>Amount (GH₵)</th>
                             <th>Balance (GH₵)</th>

@@ -166,11 +166,11 @@ function sum(){
 
     $("#gridBox tr ").each(function(){
         if($(this).find("td:nth-child(3)").html() == 'Withdrawal' ){
-            var operand = $(this).find("td:nth-child(4)").filter(":visible").html();
+            var operand = $(this).find("td:nth-child(5)").filter(":visible").html();
             operand = parseInt(operand);
             withdrawals = withdrawals + operand;
         }else{
-            var operand = $(this).find("td:nth-child(4)").filter(":visible").html();
+            var operand = $(this).find("td:nth-child(5)").filter(":visible").html();
             operand = parseInt(operand);
             deposits = deposits + operand;
         }

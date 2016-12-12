@@ -171,11 +171,13 @@
                 <tr data-id="'.$rows[0].'" data-type="'.$rows[1].'" data-date="'.$rows[2].'" data-client="'.$rows[3].'" data-amount="'.$rows[4].'" data-sales="'.$rows[7].'" >
                     <td>'.$rows[2].'</td>
                     <td>'.$rows[3].'</td>
+                    <td>'.$rows[8].'</td>
                     <td>'.$rows[1].'</td>
                     <td>'.$rows[4].'</td>
                     <td>'.$rows[5].'</td>
                     <td>'.$rows[6].'</td>
                     <td>'.$rows[7].'</td>
+
                 </tr>
             ';
         }
@@ -188,6 +190,7 @@
                  <tr data-id="'.$rows[0].'" data-type="'.$rows[1].'" data-date="'.$rows[2].'" data-client="'.$rows[3].'" data-amount="'.$rows[4].'" data-sales="'.$rows[7].'">
                     <td>'.$rows[2].'</td>
                     <td class="name">'.$rows[3].'</td>
+                    <td>'.$rows[8].'</td>
                     <td>'.$rows[1].'</td>
                     <td>'.$rows[4].'</td>
                     <td>'.$rows[5].'</td>
@@ -205,6 +208,7 @@ if(isset($_GET['loadTransWithin'])){
                 <tr data-id="'.$rows[0].'" data-type="'.$rows[1].'" data-date="'.$rows[2].'" data-client="'.$rows[3].'" data-amount="'.$rows[4].'"  data-sales="'.$rows[7].'" >
                     <td>'.$rows[2].'</td>
                     <td>'.$rows[3].'</td>
+                    <td>'.$rows[8].'</td>
                     <td>'.$rows[1].'</td>
                     <td>'.$rows[4].'</td>
                     <td>'.$rows[5].'</td>
@@ -275,7 +279,7 @@ echo '<div class="field">
                 <select class="ui selection dropdown" id="client">
                     <div class="menu">';
 while($rows = $database->fetchArray($result)){
-    echo '<option value="'.$rows[0].'">'.$rows[1].'</option>';
+    echo '<option value="'.$rows[0].'">'.$rows[1].'--->'.$rows[15].'</option>';
 }
 echo    '</div>
                 </select>

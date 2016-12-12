@@ -41,7 +41,7 @@ class trans{
     public function loadTrans(){
         global $database;
         $date = date('d-M-Y');
-        $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales
+        $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales,clients.accountNumber
             FROM transactions, users, clients
             WHERE transactions.user = users.id
             AND transactions.client = clients.id
@@ -53,7 +53,7 @@ class trans{
 
     public function loadOneTrans(){
         global $database;
-        $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name, transactions.sales
+        $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name, transactions.sales,clients.accountNumber
 FROM transactions, users, clients
 WHERE transactions.user = users.id
 AND transactions.client = clients.id ORDER BY id DESC limit 1";
@@ -85,13 +85,13 @@ AND transactions.client = clients.id ORDER BY id DESC limit 1";
         global $database;
         $query = "";
         if($end == ''){
-            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales
+            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales,clients.accountNumber
             FROM transactions, users, clients
             WHERE transactions.user = users.id
             AND transactions.client = clients.id
             AND `date` like '$start%' ORDER by id DESC";
         }else{
-            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales
+            $query = "SELECT transactions.id, transactions.type, transactions.date, clients.name, transactions.amount, transactions.balance, users.name,transactions.sales,clients.accountNumber
             FROM transactions, users, clients
             WHERE transactions.user = users.id
             AND transactions.client = clients.id
