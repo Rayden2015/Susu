@@ -13,11 +13,13 @@ class clients{
     public function createClient($name, $contact, $email, $location, $picture,$nextOfKin,$salesPerson, $unitContribution, $houseNumber, $dateOfBirth, $sex, $accountType){
         //return $_FILES["picture"]["name"];
 
+        define ('SITE_ROOT', realpath(dirname(__FILE__)));
+
         $target_dir = "/uploads/";
         $picture = $_FILES["picture"]["name"];
         $target_file = $target_dir . basename($_FILES["picture"]["name"]);
 
-        // return move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file);
+        //return move_uploaded_file($_FILES["picture"]["tmp_name"], SITE_ROOT.$target_file);
 
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -50,7 +52,7 @@ class clients{
             echo "Sorry, your file was not uploaded.";
         // if everything is ok, try to upload file
         } else {
-            if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+            if (move_uploaded_file($_FILES["picture"]["tmp_name"], SITE_ROOT.$target_file)) {
                 echo "The file ". basename( $_FILES["picture"]["name"]). " has been uploaded.";
             } else {
                 echo "Sorry, there was an error uploading your file.";

@@ -134,7 +134,7 @@
             echo '
         
             <tr data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[7].'" data-nextOfKin="'.$rows[8].'" data-salesPerson="'.$rows[9].'" data-unitContribution="'.$rows[10].'" data-houseNumber="'.$rows[11].'" data-dateOfBirth="'.$rows[14].'" data-accountNumber="'.$rows[15].'" data-sex="'.$rows[16].'" data-accountType="'.$rows[17].'" >
-                <td><img src="img/'.$rows[5].'"></td>
+                <td><img src="php/uploads/'.$rows[5].'"></td>
                 <td>'.$rows[1].'</td>
                 <td>'.$rows[15].'</td>
                 <td>'.$rows[17].'</td>
