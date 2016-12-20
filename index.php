@@ -14,6 +14,9 @@
 </head>
 <body>
     
+    <div class="login-logo">
+        <img src="img/ccss_logo.png" alt="">
+    </div>
     <div class="login">
         <h2 class="header">Login</h2>
         <form class="ui form" id="login" method="post" action="index.php" >

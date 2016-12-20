@@ -15,7 +15,7 @@ class clients{
 
         define ('SITE_ROOT', realpath(dirname(__FILE__)));
 
-        $target_dir = "/uploads/";
+        $target_dir = "\uploads/";
         $picture = $_FILES["picture"]["name"];
         $target_file = $target_dir . basename($_FILES["picture"]["name"]);
 
@@ -62,7 +62,7 @@ class clients{
         global $database;
         $query = "INSERT INTO `clients`(`picture`,`name`,`contact`,`email`, `location`,`nextOfKin`,`salesPerson`,`unitContribution`, `houseNumber`, `dateOfBirth`,`sex`,`accountType`) VALUES ('$picture','$name', '$contact', '$email', '$location','$nextOfKin','$salesPerson', '$unitContribution', '$houseNumber', '$dateOfBirth','$sex','$accountType')";
         $result = $database->exec_query($query);
-        if ($result ==1){
+        if ($result == 1){
             $query = "Select id from clients order by id desc limit 1";
             $result = $database->exec_query($query);
             $id = "";

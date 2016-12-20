@@ -241,3 +241,7 @@ select#transtype {
 table {
   width: 100%;
 }
+.login-logo {
+  width: 200px;
+  margin: 10px auto;
+}
