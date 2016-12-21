@@ -44,19 +44,28 @@
                 <form action="" class="ui form">
                     <input type="hidden" id="id" name="id">
                     <div class="field">
-                        <label for="full_name">Full Name</label>
-                        <input type="text" id="full_name">
+                        <label for="picture">Picture</label>
+                        <input type="file" id="picture">
                     </div>
-                    <div class="field">
-                        <label for="position">Position</label>
-                        <select class="ui selection dropdown" id="position">
-                            <div class="menu">
-                                <option class="item">Manager</option>
-                                <option class="item">Director</option>
-                                <option class="item">Sales</option>
-                            </div>
-                        </select>
+                    <div class="two ui fields">
+                        <div class="field">
+                            <label for="full_name">Full Name</label>
+                            <input type="text" id="full_name">
+                        </div>
+
+                        <div class="field">
+                            <label for="position">Position</label>
+                            <select class="ui selection dropdown" id="position">
+                                <div class="menu">
+                                    <option class="item">Manager</option>
+                                    <option class="item">Director</option>
+                                    <option class="item">Sales</option>
+                                </div>
+                            </select>
+                        </div>
                     </div>
+                    
+                    
                     <div class="ui two fields" >
                         <div class="field">
                             <label for="username">Username</label>
