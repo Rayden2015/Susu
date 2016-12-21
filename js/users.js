@@ -16,6 +16,7 @@ $('#position').on('change', function() {
 
 });
 
+
 var editBtn = $('.editBtn');
 $(document).on('click', editBtn, function(event) {
     var $target = event.target;
@@ -53,7 +54,6 @@ $("#createUser").click(function(){
         url = "php/action.php?editUser=''";
     }
     data = new FormData();
-    data.append("picture", $('#picture')[0].files[0] )
     data.append("id", $("#id").val());
     data.append("username", $("#username").val());
     data.append("password", $("#password").val());

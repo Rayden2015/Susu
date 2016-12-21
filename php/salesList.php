@@ -8,7 +8,7 @@ echo '<div class="field">
                 <select class="ui selection dropdown" id="sales">
                     <div class="menu">';
 while($rows = $database->fetchArray($result)){
-    echo '<option value="'.$rows[1].'">'.$rows[1].'</option>';
+    echo '<option value="'.$rows[1].'">'.$rows['username'].'</option>';
 }
 echo    '</div>
                 </select>

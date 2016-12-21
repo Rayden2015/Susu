@@ -15,11 +15,11 @@ class clients{
 
         define ('SITE_ROOT', realpath(dirname(__FILE__)));
 
-        $target_dir = "/uploads/";
+        $target_dir = "\uploads/";
         $picture = $_FILES["picture"]["name"];
         $target_file = $target_dir . basename($_FILES["picture"]["name"]);
 
-        return move_uploaded_file($_FILES["picture"]["tmp_name"], SITE_ROOT.$target_file);
+        //return move_uploaded_file($_FILES["picture"]["tmp_name"], SITE_ROOT.$target_file);
 
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -52,7 +52,7 @@ class clients{
             echo "Sorry, your file was not uploaded.";
         // if everything is ok, try to upload file
         } else {
-            if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+            if (move_uploaded_file($_FILES["picture"]["tmp_name"], SITE_ROOT.$target_file)) {
                 echo "The file ". basename( $_FILES["picture"]["name"]). " has been uploaded.";
             } else {
                 echo "Sorry, there was an error uploading your file.";
@@ -61,29 +61,30 @@ class clients{
 
         global $database;
         $query = "INSERT INTO `clients`(`picture`,`name`,`contact`,`email`, `location`,`nextOfKin`,`salesPerson`,`unitContribution`, `houseNumber`, `dateOfBirth`,`sex`,`accountType`) VALUES ('$picture','$name', '$contact', '$email', '$location','$nextOfKin','$salesPerson', '$unitContribution', '$houseNumber', '$dateOfBirth','$sex','$accountType')";
-        // $result = $database->exec_query($query);
-        // if ($result ==1){
-        //     $query = "Select id from clients order by id desc limit 1";
-        //     $result = $database->exec_query($query);
-        //     $id = "";
-        //     while($rows = $database->fetchArray($result)){
-        //         $id = $rows[0];
-        //     }
-        //     $acc = str_pad($id, 4, "0", STR_PAD_LEFT);
-        //     $acc = "CCSS".$acc;
-        //     $query = "Update clients set accountNumber = '$acc' where id=".$id;
 
-        //     $result = $database->exec_query($query);
+        $result = $database->exec_query($query);
+        if ($result == 1){
+            $query = "Select id from clients order by id desc limit 1";
+            $result = $database->exec_query($query);
+            $id = "";
+            while($rows = $database->fetchArray($result)){
+                $id = $rows[0];
+            }
+            $acc = str_pad($id, 4, "0", STR_PAD_LEFT);
+            $acc = "CCSS".$acc;
+            $query = "Update clients set accountNumber = '$acc' where id=".$id;
 
-        //     if($result == 1){
-        //         return "Client Created Successfully";
-        //     }else{
-        //         return "Client Creation Failed";
-        //     }
+            $result = $database->exec_query($query);
 
-        // }else{
-        //     return "Client Creation Failed";
-        // }
+            if($result == 1){
+                return "Client Created Successfully";
+            }else{
+                return "Client Creation Failed";
+            }
+
+        }else{
+            return "Client Creation Failed";
+        }
     }
 
      public function editClient($name, $contact, $email, $location, $picture,$nextOfKin,$salesPerson, $unitContribution, $houseNumber, $dateOfBirth, $sex,$accountType,$id){

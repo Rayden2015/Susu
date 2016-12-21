@@ -134,11 +134,11 @@
             echo '
         
             <tr data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-status="'.$rows[7].'" data-nextOfKin="'.$rows[8].'" data-salesPerson="'.$rows[9].'" data-unitContribution="'.$rows[10].'" data-houseNumber="'.$rows[11].'" data-dateOfBirth="'.$rows[14].'" data-accountNumber="'.$rows[15].'" data-sex="'.$rows[16].'" data-accountType="'.$rows[17].'" >
-                <td><img src="img/'.$rows[5].'"></td>
+                <td><img style="max-width: 80px;" src="php/uploads/'.$rows[5].'"></td>
                 <td>'.$rows[1].'</td>
                 <td>'.$rows[15].'</td>
-                <td>'.$rows[17].'</td>
-                <td>'.$rows[6].'</td>
+                <td>'.$rows['accountType'].'</td>
+                <td>'.$rows['balance'].'</td>
                 <td>'.$rows[2].'</td>
                 <td>'.$rows[9].'</td>
                 <td><div class="ui vertical animated button '.$color.'" data-id="'.$rows[0].'" data-status="'.$rows[7].'" id="activateClientBtn">
