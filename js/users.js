@@ -13,7 +13,6 @@ $('#position').on('change', function() {
     } else {
         $('.varies').show();
     }
-
 });
 
 
@@ -58,6 +57,7 @@ $("#createUser").click(function(){
     data.append("username", $("#username").val());
     data.append("password", $("#password").val());
     data.append("name", $("#full_name").val());
+    data.append("picture", $("#picture")[0].files[0]);
     data.append("email", $("#email").val());
     data.append("contact", $("#contact").val());
     data.append("location", $("#location").val());

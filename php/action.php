@@ -7,11 +7,12 @@
     $trans = new trans();
 
     if(isset($_GET['createUser'])){
-        echo $users->createUser($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_POST['username'], $_POST['password'], $_POST['position']);
+        echo $users->createUser($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_POST['username'], $_POST['password'], $_POST['position'], $_FILES["picture"]);
     }
 
     if(isset($_GET['editUser'])){
-        echo $users->editUser($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_POST['username'], $_POST['password'], $_POST['position'],$_POST['id']);
+        //var_dump($_POST['id']);
+        echo $users->editUser($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_POST['username'], $_POST['password'], $_POST['position'],$_FILES["picture"],$_POST['id']);
     }
     
 
@@ -34,7 +35,7 @@
                     <div class="column userGrid" data-id="'.$rows[0].'" data-name="'.$rows[1].'" data-contact="'.$rows[2].'" data-email="'.$rows[3].'" data-location="'.$rows[4].'" data-username="'.$rows[5].'" data-password="'.$rows[6].'" data-position="'.$rows[7].'" data-status="'.$rows[8].'">
                     <div class="ui card fluid">
                         <div class="image">
-                            <img src="img/steve.jpg" alt="">
+                            <img src="php/uploads/'.$rows[9].'" alt="">
                             <div class="editClientBtn circular flt ui icon button blue" title="Edit">
                                 <i class="write icon"></i>
                             </div>
@@ -93,7 +94,7 @@
     }
 
     if(isset($_GET['editClient'])){
-        echo $clients->editClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], "picture",$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'],$_POST['accountType'], $_POST['id']);
+        echo $clients->editClient($_POST['name'], $_POST['contact'], $_POST['email'], $_POST['location'], $_FILES['picture'],$_POST['nextOfKin'],$_POST['salesPerson'], $_POST['unitContribution'], $_POST['houseNumber'], $_POST['dateOfBirth'], $_POST['sex'],$_POST['accountType'], $_POST['id']);
     }
 
     if(isset($_GET['loadClients'])){
