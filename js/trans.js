@@ -11,6 +11,8 @@ $("#addTransBtn").click(function(){
 });
 
 $("#createTrans").click(function(){
+
+    if()
     $(".overlay").show();
     data = new FormData();
     data.append("client", $("#client option:selected").val());
