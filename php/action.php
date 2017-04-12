@@ -36,12 +36,11 @@
                     <div class="ui card fluid">
                         <div class="image">
                             <img src="php/uploads/'.$rows[9].'" alt="">
-                            
-                        </div>
-                        <div class="content">
                             <div class="editClientBtn circular flt ui icon button blue" title="Edit">
                                 <i class="write icon"></i>
                             </div>
+                        </div>
+                        <div class="content">
                             <h2 class="ui header">'.$rows[1].'</h2>
                             <span class="meta">'.$rows[7].'</span>
                             <div class="description">

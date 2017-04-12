@@ -131,7 +131,7 @@ div.sidebar nav ul li i {
 /* line 113, ../scss/style.scss */
 .card .ui.button.icon.circular.flt {
   position: absolute;
-  top: -265px;
+  bottom: -25px;
   right: 20px;
   padding: 18px;
 }
@@ -244,9 +244,4 @@ table {
 .login-logo {
   width: 200px;
   margin: 10px auto;
-}
-
-.ui.card > .image {
-  height: 250px;
-  overflow: hidden;
 }
